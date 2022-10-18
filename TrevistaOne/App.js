@@ -18,11 +18,12 @@ const Stack = createNativeStackNavigator();
 
 const App = () => {
   return (
-    <NavigationContainer>
-      <Stack.Navigator initialRouteName="Home">
-        <Stack.Screen name="Home" component={Home}></Stack.Screen>
-      </Stack.Navigator>
-    </NavigationContainer>
+    <Home />
+    // <NavigationContainer>
+    //   <Stack.Navigator initialRouteName="Home">
+    //     <Stack.Screen name="Home" component={Home}></Stack.Screen>
+    //   </Stack.Navigator>
+    // </NavigationContainer>
   );
 };
 
