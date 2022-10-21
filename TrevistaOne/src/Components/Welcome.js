@@ -3,14 +3,11 @@
 /* eslint-disable react/jsx-no-undef */
 /* eslint-disable prettier/prettier */
 import {Image, Text, View, StyleSheet, TouchableOpacity} from 'react-native';
-
+import vector from '../images/VectorW.png';
 const Welcome = () => {
   return (
     <View>
-      <Image
-        style={styles.Vector_styles}
-        source={require('../Assets/VectorW.png')}
-      />
+      <Image style={styles.Vector_styles} source={vector} />
       <Text style={styles.text_styles}>Welcome Back</Text>
 
       <linearGradient
