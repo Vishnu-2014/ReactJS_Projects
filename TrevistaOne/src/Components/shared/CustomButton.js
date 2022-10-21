@@ -18,10 +18,10 @@ const CustomButton = props => {
 };
 
 CustomButton.propTypes = {
-  buttonExtraStyle: PropTypes.object,
   title: PropTypes.string.isRequired,
-  titleExtraStyle: PropTypes.object,
   onPress: PropTypes.func.isRequired,
+  titleExtraStyle: PropTypes.object,
+  buttonExtraStyle: PropTypes.object,
 };
 
 const styles = StyleSheet.create({

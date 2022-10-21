@@ -12,7 +12,7 @@ import {
 } from 'react-native';
 import Arrow from '../images/Arrow.png';
 
-const SignIn = () => {
+const SignIn = ({navigation}) => {
   return (
     <>
       <Image style={styles.Vector_styles} source={Arrow} />
@@ -24,7 +24,7 @@ const SignIn = () => {
           <Text style={{color: '#B9B9B9'}}>Password</Text>
           <TextInput style={{borderBottomWidth: 2}} placeholder="Password" />
           <Text style={{color: '#2847FC'}}>Forget Password?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
             <View style={styles.button_View}>
               <Text style={{left: 30, fontSize: 20, color: 'white'}}>
                 Sign In
