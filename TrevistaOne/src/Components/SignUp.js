@@ -10,18 +10,18 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import Arrow from '../Assets/Arrow.png';
-const image = require('../Assets/VectorW.png');
-const back_button = require('../Assets/back_button_.png');
+import Arrow from '../images/Arrow.png';
+import BackButton from '../images/backButton.png';
+import vector from '../images/VectorW.png';
 
-const SignIn = () => {
+const SignUp = () => {
   return (
     <>
-      <Image style={styles.back_button_styles} source={back_button} />
-      <Image style={styles.Vector_styles} source={image} />
+      <Image style={styles.back_button_styles} source={BackButton} />
+      <Image style={styles.Vector_styles} source={vector} />
       <View style={styles.main}>
         <View style={styles.card}>
-          <Text style={styles.sign_in_styles}>Sign In</Text>
+          <Text style={styles.sign_in_styles}>Sign Up</Text>
           <Text style={{color: '#B9B9B9'}}>email Address</Text>
           <TextInput style={{borderBottomWidth: 2}} placeholder="email" />
           <Text style={{color: '#B9B9B9'}}>Password</Text>
@@ -30,7 +30,7 @@ const SignIn = () => {
           <TouchableOpacity>
             <View style={styles.button_View}>
               <Text style={{left: 30, fontSize: 20, color: 'white'}}>
-                Sign In
+                Sign Up
               </Text>
               <Image
                 style={{width: 30, height: 20, right: 30, color: '#FFFFFF'}}
@@ -41,8 +41,8 @@ const SignIn = () => {
         </View>
 
         <View style={{top: 40, flexDirection: 'row'}}>
-          <Text>Don't Have An Account? </Text>
-          <Text style={{color: '#201C9C'}}>Sign Up</Text>
+          <Text>Already Have An Account? </Text>
+          <Text style={{color: '#201C9C'}}>Sign In</Text>
         </View>
       </View>
     </>
@@ -59,10 +59,16 @@ const styles = StyleSheet.create({
     backgroundColor: '#2AC0EF',
     borderRadius: 20,
   },
+  back_button_styles: {
+    width: 25.39,
+    height: 20,
+    top: 61,
+    left: 25,
+  },
 
   button_View: {
     width: '100%',
-    height: 40,
+    height: 72,
     backgroundColor: '#2AC0EF',
     flexDirection: 'row',
     justifyContent: 'space-between',
@@ -115,4 +121,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default SignIn;
+export default SignUp;
