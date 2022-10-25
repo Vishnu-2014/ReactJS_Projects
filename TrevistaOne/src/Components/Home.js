@@ -13,11 +13,11 @@ const Home = ({navigation}) => {
       <View style={styles.buttonView}>
         <CustomButton
           title={'SignIn'}
-          onPress={() => navigation.navigate('signIn')}
+          onPress={() => navigation.navigate('SignIn')}
         />
         <CustomButton
           title={'SignUp'}
-          onPress={() => navigation.navigate('signUp')}
+          onPress={() => navigation.navigate('SignUp')}
         />
       </View>
     );
@@ -45,4 +45,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export {Home};
+export default Home;

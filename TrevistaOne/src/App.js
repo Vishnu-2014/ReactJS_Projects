@@ -14,6 +14,9 @@ import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import Home from './Components/Home';
 import HomePage from './Components/HomePage';
+import OtpAuthentication from './Components/OtpAuthentication';
+import OtpVerification from './Components/OtpVerification';
+import Details from './Components/Details';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,10 +41,16 @@ const App = () => {
               component={Home}
               options={{headerShown: false}}
             />
-            <Stack.Screen name="signUp" component={SignUp} />
+            <Stack.Screen name="SignUp" component={SignUp} />
             <Stack.Screen name="welcome" component={Welcome} />
-            <Stack.Screen name="signIn" component={SignIn} />
+            <Stack.Screen name="SignIn" component={SignIn} />
             <Stack.Screen name="HomePage" component={HomePage} />
+            <Stack.Screen
+              name="OtpAuthentication"
+              component={OtpAuthentication}
+            />
+            <Stack.Screen name="OtpVerification" component={OtpVerification} />
+            <Stack.Screen name="Details" component={Details} />
           </Stack.Navigator>
         </NavigationContainer>
       )}
