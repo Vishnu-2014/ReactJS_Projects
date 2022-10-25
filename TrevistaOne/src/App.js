@@ -35,22 +35,22 @@ const App = () => {
         <Home />
       ) : (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="Home">
+          <Stack.Navigator initialRouteName="HomePage">
             <Stack.Screen
               name="Home"
               component={Home}
               options={{headerShown: false}}
             />
-            <Stack.Screen name="SignUp" component={SignUp} />
             <Stack.Screen name="welcome" component={Welcome} />
+            <Stack.Screen name="SignUp" component={SignUp} />
             <Stack.Screen name="SignIn" component={SignIn} />
-            <Stack.Screen name="HomePage" component={HomePage} />
             <Stack.Screen
               name="OtpAuthentication"
               component={OtpAuthentication}
             />
             <Stack.Screen name="OtpVerification" component={OtpVerification} />
             <Stack.Screen name="Details" component={Details} />
+            <Stack.Screen name="HomePage" component={HomePage} />
           </Stack.Navigator>
         </NavigationContainer>
       )}
