@@ -4,20 +4,20 @@
 /* eslint-disable prettier/prettier */
 import {Image, Text, View, StyleSheet, TouchableOpacity} from 'react-native';
 import vector from '../images/VectorW.png';
+import LinearGradient from 'react-native-linear-gradient';
 const Welcome = () => {
   return (
     <View>
       <Image style={styles.Vector_styles} source={vector} />
       <Text style={styles.text_styles}>Welcome Back</Text>
-
-      <linearGradient
+      <LinearGradient
         start={{x: 0, y: 0}}
         end={{x: 1, y: 0}}
         colors={['#4c669f', '#3b5998', '#192f6a']}>
         <TouchableOpacity style={styles.SignIn_button}>
           <Text>Press Here</Text>
         </TouchableOpacity>
-      </linearGradient>
+      </LinearGradient>
     </View>
   );
 };

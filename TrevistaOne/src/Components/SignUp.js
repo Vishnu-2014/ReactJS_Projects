@@ -14,7 +14,7 @@ import Arrow from '../images/Arrow.png';
 import BackButton from '../images/backButton.png';
 import vector from '../images/VectorW.png';
 
-const SignUp = () => {
+const SignUp = ({navigation}) => {
   return (
     <>
       <Image style={styles.back_button_styles} source={BackButton} />
@@ -27,7 +27,8 @@ const SignUp = () => {
           <Text style={{color: '#B9B9B9'}}>Password</Text>
           <TextInput style={{borderBottomWidth: 2}} placeholder="Password" />
           <Text style={{color: '#2847FC'}}>Forget Password?</Text>
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('OtpAuthentication')}>
             <View style={styles.button_View}>
               <Text style={{left: 30, fontSize: 20, color: 'white'}}>
                 Sign Up
