@@ -17,6 +17,7 @@ import HomePage from './Components/HomePage';
 import OtpAuthentication from './Components/OtpAuthentication';
 import OtpVerification from './Components/OtpVerification';
 import Details from './Components/Details';
+import {MedicineType} from './Components/DrawerComponents/MedicineType';
 
 const Stack = createNativeStackNavigator();
 
@@ -35,7 +36,7 @@ const App = () => {
         <Home />
       ) : (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="HomePage">
+          <Stack.Navigator initialRouteName="MedicineType">
             <Stack.Screen
               name="Home"
               component={Home}
@@ -51,6 +52,7 @@ const App = () => {
             <Stack.Screen name="OtpVerification" component={OtpVerification} />
             <Stack.Screen name="Details" component={Details} />
             <Stack.Screen name="HomePage" component={HomePage} />
+            <Stack.Screen name="MedicineType" component={MedicineType} />
           </Stack.Navigator>
         </NavigationContainer>
       )}
