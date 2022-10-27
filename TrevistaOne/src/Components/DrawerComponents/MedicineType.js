@@ -10,7 +10,7 @@ import {
 } from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 
-const box = (text, textInput) => {
+const renderInputField = (text, textInput) => {
   return (
     <>
       <Text style={{fontSize: 15, color: '#000000'}}>{text}</Text>
@@ -34,12 +34,12 @@ const MedicineType = () => {
           <Text style={styles.MedicineTypeTextStyles}>Medicine Type</Text>
         </LinearGradient>
         <View style={styles.Card}>
-          <Text style={{fontSize: 20, color: '#2AC0EF', left: 30}}>
+          <Text style={styles.MedicineTypeInfoTextStyle}>
             Medicine Type Information
           </Text>
-          {box('Type Name', 'Type Name')}
-          {box('Create Date', 'dd/mm/yyyy')}
-          {box('Created By', 'Suresh Buddiga')}
+          {renderInputField('Type Name', 'Type Name')}
+          {renderInputField('Create Date', 'dd/mm/yyyy')}
+          {renderInputField('Created By', 'Suresh Buddiga')}
           <Button color={'#2AC0EF'} title="Save" />
         </View>
         <View style={styles.Card}></View>
@@ -76,6 +76,7 @@ const styles = StyleSheet.create({
     width: '80%',
     marginBottom: 30,
   },
+  MedicineTypeInfoTextStyle: {fontSize: 20, color: '#2AC0EF', left: 30},
 });
 
 export {MedicineType};
