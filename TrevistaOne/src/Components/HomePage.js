@@ -2,10 +2,13 @@
 /* eslint-disable prettier/prettier */
 import {View, Text, Pressable, StyleSheet, Image, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
+
 import Medicine from '../images/Medicine.png';
 import Delivery from '../images/Delivery.png';
 import Cart from '../images/Cart.png';
 import PropTypes from 'prop-types';
+
+import {MedicineType} from './DrawerComponents/MedicineType';
 
 const CustomCard = props => {
   const {
@@ -33,16 +36,17 @@ const CustomCard = props => {
 CustomCard.propTypes = {
   Heading: PropTypes.string.isRequired,
   SubHeading: PropTypes.string.isRequired,
-  ImageSource: PropTypes.string.isRequired,
+  ImageSource: PropTypes.object.isRequired,
   color1: PropTypes.string.isRequired,
   color2: PropTypes.string.isRequired,
-  onPress: PropTypes.func.isRequired,
+  onPress: PropTypes.func,
 };
+
 const HomePage = () => {
   return (
     <>
       <View style={styles.topBarStyles}>
-        <Text>menu</Text>
+        <Text onPress={this.props.navigation.screen}>Menu</Text>
         <Text>search</Text>
         <Text>profile</Text>
       </View>
@@ -51,7 +55,7 @@ const HomePage = () => {
         <CustomCard
           Heading={'Medicine'}
           SubHeading={'Total Stock'}
-          ImageSource={Medicine}
+          ImageSource={{Medicine}}
           color1={'#C491F9'}
           color2={'#B575F5'}
           onpress={() => Alert.alert('Medicine Card')}
@@ -59,7 +63,7 @@ const HomePage = () => {
         <CustomCard
           Heading={'SUPPLIERS'}
           SubHeading={'10'}
-          ImageSource={Delivery}
+          ImageSource={{Delivery}}
           color1={'#6AA2E4'}
           color2={'#697CE7'}
           onpress={() => Alert.alert('Suppliers Card')}
@@ -67,7 +71,7 @@ const HomePage = () => {
         <CustomCard
           Heading={'REQUESTS'}
           SubHeading={'34'}
-          ImageSource={Cart}
+          ImageSource={{Cart}}
           color1={'#FEB482'}
           color2={'#FF9A8C'}
           onpress={() => Alert.alert('Requests Card')}
