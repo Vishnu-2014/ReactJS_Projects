@@ -7,7 +7,10 @@ import {
   StyleSheet,
   TextInput,
   Button,
+  Alert,
 } from 'react-native';
+import {DropDown} from '../shared';
+import SearchBar from 'react-native-dynamic-search-bar';
 import LinearGradient from 'react-native-linear-gradient';
 
 const renderInputField = (text, textInput) => {
@@ -17,7 +20,8 @@ const renderInputField = (text, textInput) => {
       <TextInput
         style={styles.textInputStyles}
         placeholder={textInput}
-        underlineColorAndroid={'black'}></TextInput>
+        underlineColorAndroid={'black'}
+      />
     </>
   );
 };
@@ -40,9 +44,17 @@ const MedicineType = () => {
           {renderInputField('Type Name', 'Type Name')}
           {renderInputField('Create Date', 'dd/mm/yyyy')}
           {renderInputField('Created By', 'Suresh Buddiga')}
+
           <Button color={'#2AC0EF'} title="Save" />
         </View>
-        <View style={styles.Card}></View>
+        <View style={styles.Card}>
+          <DropDown />
+          <SearchBar
+            placeholder="Search here"
+            onPress={() => Alert.alert('onPress')}
+            onChangeText={text => console.log(text)}
+          />
+        </View>
       </View>
     </ScrollView>
   );
