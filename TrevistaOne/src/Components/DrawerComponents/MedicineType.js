@@ -1,4 +1,5 @@
 /* eslint-disable prettier/prettier */
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {
   View,
@@ -16,11 +17,27 @@ import LinearGradient from 'react-native-linear-gradient';
 const renderInputField = (text, textInput) => {
   return (
     <>
-      <Text style={{fontSize: 15, color: '#000000'}}>{text}</Text>
+      <Text
+        style={{
+          fontSize: 18,
+          color: '#757272',
+          alignSelf: 'flex-start',
+          left: 20,
+          fontWeight: '500',
+        }}>
+        {text}
+      </Text>
       <TextInput
-        style={styles.textInputStyles}
+        style={[
+          styles.textInputStyles,
+          {
+            backgroundColor:
+              textInput === 'Vishnu Reddy' ? '#E5E5E5' : '#ffffff',
+            borderWidth: textInput === 'Vishnu Reddy' ? 0 : 1,
+          },
+        ]}
         placeholder={textInput}
-        underlineColorAndroid={'black'}
+        placeholderTextColor="#666666"
       />
     </>
   );
@@ -43,7 +60,7 @@ const MedicineType = () => {
           </Text>
           {renderInputField('Type Name', 'Type Name')}
           {renderInputField('Create Date', 'dd/mm/yyyy')}
-          {renderInputField('Created By', 'Suresh Buddiga')}
+          {renderInputField('Created By', 'Vishnu Reddy')}
 
           <Button color={'#2AC0EF'} title="Save" />
         </View>
@@ -63,7 +80,7 @@ const MedicineType = () => {
 const styles = StyleSheet.create({
   Container: {
     flex: 1,
-    marginVertical: 20,
+    backgroundColor: '#ffffff',
   },
   MainView: {
     alignItems: 'center',
@@ -77,18 +94,26 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   Card: {
-    alignItems: 'flex-start',
-    height: 400,
+    height: 350,
     width: '80%',
     backgroundColor: '#ffffff',
     borderRadius: 20,
-    marginTop: 20,
+    marginTop: 30,
+    borderWidth: 2,
+    borderColor: '#C4C4C4',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
   },
   textInputStyles: {
-    width: '80%',
-    marginBottom: 30,
+    width: '90%',
+    height: 41,
+    marginBottom: 20,
+    borderWidth: 1,
+    borderColor: '#C4C4C4',
+    borderRadius: 10,
+    textAlign: 'left',
   },
-  MedicineTypeInfoTextStyle: {fontSize: 20, color: '#2AC0EF', left: 30},
+  MedicineTypeInfoTextStyle: {fontSize: 20, color: '#2AC0EF'},
 });
 
 export {MedicineType};

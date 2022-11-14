@@ -42,17 +42,46 @@ const App = () => {
               component={Home}
               options={{headerShown: false}}
             />
-            <Stack.Screen name="welcome" component={Welcome} />
-            <Stack.Screen name="SignUp" component={SignUp} />
-            <Stack.Screen name="SignIn" component={SignIn} />
+            <Stack.Screen
+              name="welcome"
+              component={Welcome}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="SignUp"
+              component={SignUp}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="SignIn"
+              component={SignIn}
+              options={{headerShown: false}}
+            />
             <Stack.Screen
               name="OtpAuthentication"
               component={OtpAuthentication}
+              options={{headerShown: false}}
             />
-            <Stack.Screen name="OtpVerification" component={OtpVerification} />
-            <Stack.Screen name="Details" component={Details} />
-            <Stack.Screen name="HomePage" component={HomePage} />
-            <Stack.Screen name="MedicineType" component={MedicineType} />
+            <Stack.Screen
+              name="OtpVerification"
+              component={OtpVerification}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="Details"
+              component={Details}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="HomePage"
+              component={HomePage}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="MedicineType"
+              component={MedicineType}
+              options={{headerShown: false}}
+            />
           </Stack.Navigator>
         </NavigationContainer>
       )}
