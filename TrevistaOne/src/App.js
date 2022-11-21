@@ -17,7 +17,8 @@ import HomePage from './Components/HomePage';
 import OtpAuthentication from './Components/OtpAuthentication';
 import OtpVerification from './Components/OtpVerification';
 import Details from './Components/Details';
-import {MedicineType} from './Components/DrawerComponents/MedicineType';
+import MedicineType from './Components/DrawerComponents/MedicineType';
+import MedicineList from './Components/DrawerComponents/MedicineList';
 
 const Stack = createNativeStackNavigator();
 
@@ -36,7 +37,7 @@ const App = () => {
         <Home />
       ) : (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="MedicineType">
+          <Stack.Navigator initialRouteName="MedicineList">
             <Stack.Screen
               name="Home"
               component={Home}
@@ -80,6 +81,11 @@ const App = () => {
             <Stack.Screen
               name="MedicineType"
               component={MedicineType}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="MedicineList"
+              component={MedicineList}
               options={{headerShown: false}}
             />
           </Stack.Navigator>

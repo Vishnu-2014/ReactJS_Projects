@@ -10,9 +10,6 @@ import {
   Button,
   Alert,
 } from 'react-native';
-import {DropDown} from '../shared';
-import SearchBar from 'react-native-dynamic-search-bar';
-import LinearGradient from 'react-native-linear-gradient';
 
 const renderInputField = (text, textInput) => {
   return (
@@ -45,35 +42,24 @@ const renderInputField = (text, textInput) => {
 
 const MedicineType = () => {
   return (
-    <ScrollView style={styles.Container}>
+    <View style={styles.Container}>
       <View style={styles.MainView}>
-        <LinearGradient
+        {/* <LinearGradient
           style={styles.linearGradient}
           start={{x: 0, y: 0}}
           end={{x: 1, y: 0}}
           colors={['#2AC0EF', '#58D8F9']}>
           <Text style={styles.MedicineTypeTextStyles}>Medicine Type</Text>
-        </LinearGradient>
+        </LinearGradient> */}
         <View style={styles.Card}>
-          <Text style={styles.MedicineTypeInfoTextStyle}>
-            Medicine Type Information
-          </Text>
           {renderInputField('Type Name', 'Type Name')}
           {renderInputField('Create Date', 'dd/mm/yyyy')}
           {renderInputField('Created By', 'Vishnu Reddy')}
 
           <Button color={'#2AC0EF'} title="Save" />
         </View>
-        <View style={styles.Card}>
-          <DropDown />
-          <SearchBar
-            placeholder="Search here"
-            onPress={() => Alert.alert('onPress')}
-            onChangeText={text => console.log(text)}
-          />
-        </View>
       </View>
-    </ScrollView>
+    </View>
   );
 };
 
@@ -81,6 +67,7 @@ const styles = StyleSheet.create({
   Container: {
     flex: 1,
     backgroundColor: '#ffffff',
+    justifyContent: 'center',
   },
   MainView: {
     alignItems: 'center',
@@ -94,8 +81,8 @@ const styles = StyleSheet.create({
     paddingHorizontal: 30,
   },
   Card: {
-    height: 350,
-    width: '80%',
+    height: 450,
+    width: '90%',
     backgroundColor: '#ffffff',
     borderRadius: 20,
     marginTop: 30,
@@ -107,13 +94,15 @@ const styles = StyleSheet.create({
   textInputStyles: {
     width: '90%',
     height: 41,
-    marginBottom: 20,
-    borderWidth: 1,
+    borderWidth: 2,
     borderColor: '#C4C4C4',
     borderRadius: 10,
     textAlign: 'left',
   },
-  MedicineTypeInfoTextStyle: {fontSize: 20, color: '#2AC0EF'},
+  MedicineTypeInfoTextStyle: {
+    fontSize: 20,
+    color: '#2AC0EF',
+  },
 });
 
-export {MedicineType};
+export default MedicineType;
