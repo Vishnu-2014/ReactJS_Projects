@@ -59,7 +59,6 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   dropdown2DropdownStyle: {
-    backgroundColor: 'red',
     borderBottomLeftRadius: 1,
     borderBottomRightRadius: 12,
   },

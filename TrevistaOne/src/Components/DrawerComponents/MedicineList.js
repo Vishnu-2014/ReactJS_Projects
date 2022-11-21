@@ -5,37 +5,63 @@ import {StyleSheet, View, Alert, Text, Image} from 'react-native';
 import {DropDown} from '../shared';
 import SearchBar from 'react-native-dynamic-search-bar';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
+import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import Camera from 'C:Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images';
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+import MedicineSymbol from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/MedicineSymbol.png';
+import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/Profile.png';
 
 const MedicineList = () => {
   const CustomGridElements = props => {
     return <Text style={styles.TextBoxStyle}>{props}</Text>;
   };
+
+  const HeadingText = text => {
+    return <Text style={styles.HeadingTextStyles}>{text}</Text>;
+  };
+
   return (
     <View style={styles.container}>
       <View style={styles.topBarStyles}>
-        <EvilIcons name="navicon" />
+        <EvilIcons style={{fontSize: 35}} name="navicon" />
         <SearchBar
           placeholder="Search here"
           onPress={() => Alert.alert('onPress')}
           onChangeText={text => console.log(text)}
+          style={styles.TopSearchBarStyles}
         />
-        <View style={styles.circleStyle}>
-          <Image source={Camera} />
-        </View>
+        <Image style={styles.ImageStyles} source={camera} />
       </View>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          width: '100%',
+          top: 10,
+        }}>
+        <Ionicons style={{fontSize: 35, color: '#666666'}} name="arrow-back" />
+        <Text style={{fontSize: 20, fontWeight: '600', color: '#666666'}}>
+          Medicine Type Information
+        </Text>
+        <Image source={MedicineSymbol} />
+      </View>
+
       <View style={styles.Card}>
-        <Text style={styles.HeadingTextStyles}>Show</Text>
+        {HeadingText('Show')}
         <DropDown style={{width: 100}} />
-        <Text style={styles.HeadingTextStyles}>Search</Text>
+        {HeadingText('Show')}
+
         <SearchBar
           placeholder="Search here"
           onPress={() => Alert.alert('onPress')}
           onChangeText={text => console.log(text)}
         />
-        <Text style={styles.HeadingTextStyles}>Entries</Text>
+
+        {HeadingText('Show')}
         <View style={styles.GridBoxStyles}>
           {CustomGridElements('Type Name')}
           {CustomGridElements('Type 1')}
@@ -53,6 +79,29 @@ const MedicineList = () => {
           </View>
         </View>
       </View>
+
+      <Text style={{top: 30, fontSize: 14, fontWeight: '500'}}>
+        Show 1 to 1 of 1 Entries
+      </Text>
+
+      <View
+        style={{
+          flexDirection: 'row',
+          top: 50,
+          alignItems: 'center',
+          justifyContent: 'space-evenly',
+          width: 100,
+        }}>
+        <FontAwesome name="backward" style={styles.EntriesIconStyle} />
+        <Text
+          style={{backgroundColor: '#3CCCF9', padding: 4.5, color: '#ffffff'}}>
+          01
+        </Text>
+        <FontAwesome
+          name="backward"
+          style={[styles.EntriesIconStyle, {transform: [{rotateY: '180deg'}]}]}
+        />
+      </View>
     </View>
   );
 };
@@ -68,7 +117,6 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: 'yellow',
     width: '100%',
     height: '8%',
   },
@@ -82,7 +130,7 @@ const styles = StyleSheet.create({
     borderColor: '#C4C4C4',
     alignItems: 'center',
     justifyContent: 'space-evenly',
-    top: 130,
+    top: 10,
   },
   TextBoxStyle: {
     width: 130,
@@ -132,16 +180,26 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     padding: 5,
   },
-  circleStyle: {
-    height: 130,
-    width: 130,
-    borderWidth: 3,
-    borderRadius: 250,
+  ImageStyles: {
+    width: 30,
+    height: 30,
+    borderWidth: 1,
     borderColor: '#2AC0EF',
-    top: '5%',
-    backgroundColor: 'white',
-    alignItems: 'center',
-    justifyContent: 'center',
+    borderRadius: 30,
+  },
+  TopSearchBarStyles: {
+    width: 247,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#ffffff',
+    borderWidth: 1,
+    borderColor: '#C4C4C4',
+  },
+  EntriesIconStyle: {
+    fontSize: 20,
+    backgroundColor: '#F6F6F6',
+    color: '#666666',
+    padding: 4,
   },
 });
 
