@@ -2,7 +2,6 @@
 import React from 'react';
 import {StyleSheet, View, Alert, Text, Image} from 'react-native';
 
-import 'react-native-gesture-handler';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
