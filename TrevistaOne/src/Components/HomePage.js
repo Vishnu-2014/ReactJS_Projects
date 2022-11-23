@@ -5,7 +5,7 @@ import LinearGradient from 'react-native-linear-gradient';
 import Medicine from '../images/Medicine.png';
 import Delivery from '../images/Delivery.png';
 import Cart from '../images/Cart.png';
-import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/Profile.png';
+import camera from '../images/Profile.png';
 
 import PropTypes from 'prop-types';
 import SearchBar from 'react-native-dynamic-search-bar';

@@ -18,7 +18,7 @@ import {DropDown} from '../shared';
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
-import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/Profile.png';
+import camera from '../../images/Profile.png';
 
 const AddMedicine = () => {
   const CustomFields = props => {
@@ -43,7 +43,8 @@ const AddMedicine = () => {
               borderColor: '#C4C4C4',
               backgroundColor: props === 'Batch Number' ? '#F6F6F6' : false,
             }}
-            value={props === 'Batch Number' ? 'B234Rtsh' : false}></TextInput>
+            value={props === 'Batch Number' ? 'B234Rtsh' : false}
+          />
         ) : props === 'Expiry Date' ? (
           <Text>Date Element</Text>
         ) : (

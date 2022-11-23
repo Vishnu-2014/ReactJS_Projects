@@ -11,8 +11,8 @@ import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityI
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import MedicineSymbol from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/MedicineSymbol.png';
-import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/Profile.png';
+import MedicineSymbol from '../../images/MedicineSymbol.png';
+import camera from '../../images/Profile.png';
 
 const MedicineList = () => {
   const CustomGridElements = props => {
