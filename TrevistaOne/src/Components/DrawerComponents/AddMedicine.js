@@ -15,13 +15,14 @@ import {SearchBar} from 'react-native-elements';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 import {DropDown} from '../shared';
-
+import {addMedicineFields, fieldTypes} from '../../utils/Constants';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 import camera from '../../images/Profile.png';
 
 const AddMedicine = () => {
-  const CustomFields = props => {
+  const CustomFields = item => {
+    const {title, type} = item;
     return (
       <View style={{alignItems: 'center', marginTop: 10, marginBottom: 10}}>
         <Text
@@ -31,9 +32,9 @@ const AddMedicine = () => {
             alignSelf: 'flex-start',
             left: 20,
           }}>
-          {props}
+          {title}
         </Text>
-        {props === 'Batch Number' ? (
+        {type === fieldTypes.textInput ? (
           <TextInput
             style={{
               borderWidth: 1,
@@ -41,11 +42,11 @@ const AddMedicine = () => {
               width: '90%',
               height: 40,
               borderColor: '#C4C4C4',
-              backgroundColor: props === 'Batch Number' ? '#F6F6F6' : false,
+              backgroundColor: title === 'Batch Number' ? '#F6F6F6' : false,
             }}
-            value={props === 'Batch Number' ? 'B234Rtsh' : false}
+            value={title === 'Batch Number' ? 'B234Rtsh' : false}
           />
-        ) : props === 'Expiry Date' ? (
+        ) : type === fieldTypes.date ? (
           <Text>Date Element</Text>
         ) : (
           <DropDown />
@@ -74,17 +75,9 @@ const AddMedicine = () => {
           marginBottom: 10,
           borderColor: '#C4C4C4',
         }}>
-        {CustomFields('Batch Number')}
-        {CustomFields('Medicine Name')}
-        {CustomFields('Specifications')}
-        {CustomFields('Batch Number ')}
-        {CustomFields('Type Name')}
-        {CustomFields('Supplier Name')}
-        {CustomFields('Measurement')}
-        {CustomFields('Remarks')}
-        {CustomFields('Price')}
-        {CustomFields('Expiry Date')}
-        {CustomFields('Quantity On Hand')}
+        {addMedicineFields.map(item => {
+          return CustomFields(item);
+        })}
       </ScrollView>
     </View>
   );
