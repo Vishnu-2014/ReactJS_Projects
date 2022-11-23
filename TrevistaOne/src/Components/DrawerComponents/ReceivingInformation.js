@@ -1,6 +1,5 @@
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
-import {react, useState} from 'react';
+/* eslint-disable react/react-in-jsx-scope */
 import {
   View,
   Text,
@@ -13,7 +12,6 @@ import {
 } from 'react-native';
 
 import SearchBar from 'react-native-dynamic-search-bar';
-import DateTimePicker from '@react-native-community/datetimepicker';
 
 import {DropDown} from '../shared';
 
@@ -24,27 +22,13 @@ import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/Trevis
 const RecievingInformation = () => {
   const CustomFields = props => {
     return (
-      <View style={{alignItems: 'center', marginTop: 10, marginBottom: 10}}>
-        <Text
-          style={{
-            fontSize: 18,
-            fontWeight: '500',
-            alignSelf: 'flex-start',
-            left: 20,
-          }}>
-          {props}
-        </Text>
+      <View style={styles.CustomFieldsViewStyle}>
+        <Text style={styles.CustomFieldsTextStyle}>{props}</Text>
         {props === 'Batch Number' ? (
           <TextInput
-            style={{
-              borderWidth: 1,
-              borderRadius: 6,
-              width: '90%',
-              height: 40,
-              borderColor: '#C4C4C4',
-              backgroundColor: props === 'Batch Number' ? '#F6F6F6' : false,
-            }}
-            value={props === 'Batch Number' ? 'B234Rtsh' : false}></TextInput>
+            style={styles.CustomFieldsTextInputStyle}
+            value={props === 'Batch Number' ? 'B234Rtsh' : false}
+          />
         ) : props === 'Date Recieved' ? (
           <Text>Date Element</Text>
         ) : (
@@ -66,14 +50,7 @@ const RecievingInformation = () => {
         <Image style={styles.ImageStyles} source={camera} />
       </View>
 
-      <ScrollView
-        style={{
-          width: '85%',
-          borderWidth: 1,
-          borderRadius: 15,
-          marginBottom: 10,
-          borderColor: '#C4C4C4',
-        }}>
+      <ScrollView style={styles.ScrollViewStyles}>
         {CustomFields('Batch Number')}
         {CustomFields('Medicine Name')}
         {CustomFields('Supplier Name')}
@@ -85,21 +62,8 @@ const RecievingInformation = () => {
         {CustomFields('Date Recieved')}
         {CustomFields('Processed By')}
 
-        <Pressable
-          style={{
-            backgroundColor: '#2AC0EF',
-            width: '80%',
-            height: 40,
-            marginBottom: 40,
-            marginTop: 20,
-            alignSelf: 'center',
-            borderRadius: 8,
-            alignItems: 'center',
-            justifyContent: 'center',
-          }}>
-          <Text style={{fontSize: 20, fontWeight: '700', color: '#ffffff'}}>
-            Save
-          </Text>
+        <Pressable style={styles.ButtonStyles}>
+          <Text style={styles.ButtonTextStyles}>Save</Text>
         </Pressable>
       </ScrollView>
     </View>
@@ -134,6 +98,48 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#2AC0EF',
     borderRadius: 30,
+  },
+  ScrollViewStyles: {
+    width: '85%',
+    borderWidth: 1,
+    borderRadius: 15,
+    marginBottom: 10,
+    borderColor: '#C4C4C4',
+  },
+  ButtonStyles: {
+    backgroundColor: '#2AC0EF',
+    width: '80%',
+    height: 40,
+    marginBottom: 40,
+    marginTop: 20,
+    alignSelf: 'center',
+    borderRadius: 8,
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  ButtonTextStyles: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: '#ffffff',
+  },
+
+  CustomFieldsViewStyle: {
+    alignItems: 'center',
+    marginTop: 10,
+    marginBottom: 10,
+  },
+  CustomFieldsTextStyle: {
+    fontSize: 18,
+    fontWeight: '500',
+    alignSelf: 'flex-start',
+    left: 20,
+  },
+  CustomFieldsTextInputStyle: {
+    borderWidth: 1,
+    borderRadius: 6,
+    width: '90%',
+    height: 40,
+    borderColor: '#C4C4C4',
   },
 });
 
