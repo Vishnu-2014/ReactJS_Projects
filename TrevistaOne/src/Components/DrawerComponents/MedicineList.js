@@ -2,6 +2,10 @@
 import React from 'react';
 import {StyleSheet, View, Alert, Text, Image} from 'react-native';
 
+import 'react-native-gesture-handler';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {NavigationContainer} from '@react-navigation/native';
+
 import {DropDown} from '../shared';
 import {SearchBar} from 'react-native-elements';
 
@@ -14,7 +18,23 @@ import Ionicons from 'react-native-vector-icons/Ionicons';
 import MedicineSymbol from '../../images/MedicineSymbol.png';
 import camera from '../../images/Profile.png';
 
-const MedicineList = () => {
+import SignIn from '../SignIn';
+import SignUp from '../SignUp';
+
+const Drawer = createDrawerNavigator();
+
+const MyDrawer = () => {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Feed" component={SignIn} />
+        <Drawer.Screen name="Article" component={SignUp} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+};
+
+const MedicineList = ({navigation}) => {
   const CustomGridElements = props => {
     return <Text style={styles.TextBoxStyle}>{props}</Text>;
   };
@@ -26,7 +46,13 @@ const MedicineList = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topBarStyles}>
-        <EvilIcons style={{fontSize: 35}} name="navicon" />
+        <EvilIcons
+          style={{fontSize: 35}}
+          name="navicon"
+          onPress={() => {
+            navigation.openDrawer();
+          }}
+        />
         <SearchBar
           placeholder="Search here"
           onPress={() => Alert.alert('onPress')}
