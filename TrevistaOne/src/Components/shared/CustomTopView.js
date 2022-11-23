@@ -3,7 +3,7 @@
 import {View, Alert, StyleSheet, Image} from 'react-native';
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import SearchBar from 'react-native-dynamic-search-bar';
+import {SearchBar} from 'react-native-elements';
 
 import camera from '../../images/Profile.png';
 

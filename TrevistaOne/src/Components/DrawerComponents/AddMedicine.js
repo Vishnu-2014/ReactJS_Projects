@@ -11,7 +11,7 @@ import {
   ScrollView,
 } from 'react-native';
 
-import SearchBar from 'react-native-dynamic-search-bar';
+import {SearchBar} from 'react-native-elements';
 import DateTimePicker from '@react-native-community/datetimepicker';
 
 import {DropDown} from '../shared';

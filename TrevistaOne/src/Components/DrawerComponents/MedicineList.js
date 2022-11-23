@@ -3,7 +3,7 @@ import React from 'react';
 import {StyleSheet, View, Alert, Text, Image} from 'react-native';
 
 import {DropDown} from '../shared';
-import SearchBar from 'react-native-dynamic-search-bar';
+import {SearchBar} from 'react-native-elements';
 
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';

@@ -8,7 +8,7 @@ import Cart from '../images/Cart.png';
 import camera from '../images/Profile.png';
 
 import PropTypes from 'prop-types';
-import SearchBar from 'react-native-dynamic-search-bar';
+import {SearchBar} from 'react-native-elements';
 
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
