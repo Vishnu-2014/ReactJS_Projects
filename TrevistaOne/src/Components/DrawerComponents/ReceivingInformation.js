@@ -9,9 +9,11 @@ import {
   Image,
   Alert,
   ScrollView,
+  Pressable,
 } from 'react-native';
 
 import SearchBar from 'react-native-dynamic-search-bar';
+import DateTimePicker from '@react-native-community/datetimepicker';
 
 import {DropDown} from '../shared';
 
@@ -19,7 +21,7 @@ import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/Profile.png';
 
-const AddMedicine = () => {
+const RecievingInformation = () => {
   const CustomFields = props => {
     return (
       <View style={{alignItems: 'center', marginTop: 10, marginBottom: 10}}>
@@ -43,7 +45,7 @@ const AddMedicine = () => {
               backgroundColor: props === 'Batch Number' ? '#F6F6F6' : false,
             }}
             value={props === 'Batch Number' ? 'B234Rtsh' : false}></TextInput>
-        ) : props === 'Expiry Date' ? (
+        ) : props === 'Date Recieved' ? (
           <Text>Date Element</Text>
         ) : (
           <DropDown />
@@ -74,15 +76,31 @@ const AddMedicine = () => {
         }}>
         {CustomFields('Batch Number')}
         {CustomFields('Medicine Name')}
-        {CustomFields('Specifications')}
-        {CustomFields('Batch Number ')}
-        {CustomFields('Type Name')}
         {CustomFields('Supplier Name')}
-        {CustomFields('Measurement')}
-        {CustomFields('Remarks')}
         {CustomFields('Price')}
-        {CustomFields('Expiry Date')}
-        {CustomFields('Quantity On Hand')}
+        {CustomFields('Quantity')}
+        {CustomFields('Amount')}
+        {CustomFields('Remarks')}
+        {CustomFields('Reference Number')}
+        {CustomFields('Date Recieved')}
+        {CustomFields('Processed By')}
+
+        <Pressable
+          style={{
+            backgroundColor: '#2AC0EF',
+            width: '80%',
+            height: 40,
+            marginBottom: 40,
+            marginTop: 20,
+            alignSelf: 'center',
+            borderRadius: 8,
+            alignItems: 'center',
+            justifyContent: 'center',
+          }}>
+          <Text style={{fontSize: 20, fontWeight: '700', color: '#ffffff'}}>
+            Save
+          </Text>
+        </Pressable>
       </ScrollView>
     </View>
   );
@@ -119,4 +137,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddMedicine;
+export default RecievingInformation;

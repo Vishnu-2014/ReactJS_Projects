@@ -21,6 +21,7 @@ import MedicineType from './Components/DrawerComponents/MedicineType';
 import MedicineList from './Components/DrawerComponents/MedicineList';
 import AddMedicine from './Components/DrawerComponents/AddMedicine';
 import MedicineCategory from './Components/DrawerComponents/MedicineCategory';
+import RecievingInformation from './Components/DrawerComponents/ReceivingInformation';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,7 +40,7 @@ const App = () => {
         <Home />
       ) : (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="MedicineCategory">
+          <Stack.Navigator initialRouteName="RecievingInformation">
             <Stack.Screen
               name="Home"
               component={Home}
@@ -98,6 +99,11 @@ const App = () => {
             <Stack.Screen
               name="MedicineCategory"
               component={MedicineCategory}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="RecievingInformation"
+              component={RecievingInformation}
               options={{headerShown: false}}
             />
           </Stack.Navigator>
