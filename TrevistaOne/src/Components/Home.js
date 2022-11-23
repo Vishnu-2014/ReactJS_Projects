@@ -27,7 +27,6 @@ const Home = ({navigation}) => {
       <Image source={vector} />
       <Image source={trevista} />
       <Image source={pharmacy} />
-      {renderButtons()}
     </View>
   );
 };
