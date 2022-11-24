@@ -16,10 +16,6 @@ import HomePage from './Components/HomePage';
 import OtpAuthentication from './Components/OtpAuthentication';
 import OtpVerification from './Components/OtpVerification';
 import Details from './Components/Details';
-import MedicineType from './Components/DrawerComponents/MedicineType';
-import MedicineList from './Components/DrawerComponents/MedicineList';
-import AddMedicine from './Components/DrawerComponents/AddMedicine';
-import MedicineCategory from './Components/DrawerComponents/MedicineCategory';
 import {NavigationDrawerComponent} from './Components/DrawerComponents/NavigarionDrawerComponent';
 
 const Stack = createNativeStackNavigator();
@@ -83,26 +79,6 @@ const App = () => {
             <Stack.Screen
               name="HomePage"
               component={HomePage}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="MedicineType"
-              component={MedicineType}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="MedicineList"
-              component={MedicineList}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="AddMedicine"
-              component={AddMedicine}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="MedicineCategory"
-              component={MedicineCategory}
               options={{headerShown: false}}
             />
           </Stack.Navigator>

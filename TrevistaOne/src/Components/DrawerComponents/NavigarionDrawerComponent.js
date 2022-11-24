@@ -4,7 +4,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import HomePage from '../HomePage';
 import MedicineType from '../DrawerComponents/MedicineType';
 import MedicineList from '../DrawerComponents/MedicineList';
-import AddMedicine from '../DrawerComponents/AddMedicine';
+import AddMedicine from '../DrawerComponents/Medicine/AddMedicine';
 import MedicineCategory from '../DrawerComponents/MedicineCategory';
 import {NavHeaderTitle} from '../shared/NavHeaderTitle';
 const Drawer = createDrawerNavigator();
@@ -12,13 +12,7 @@ const Drawer = createDrawerNavigator();
 const NavigationDrawerComponent = () => {
   return (
     <Drawer.Navigator initialRouteName="HomePage">
-      <Drawer.Screen
-        name="HomePage"
-        component={HomePage}
-        options={{
-          headerTitle: () => {},
-        }}
-      />
+      <Drawer.Screen name="HomePage" component={HomePage} />
       <Drawer.Screen
         name="MedicineType"
         component={MedicineType}
