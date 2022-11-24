@@ -1,11 +1,16 @@
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
+/* eslint-disable react/react-in-jsx-scope */
 import {View, Text, Pressable, StyleSheet, Image, Alert} from 'react-native';
 import LinearGradient from 'react-native-linear-gradient';
 import Medicine from '../images/Medicine.png';
 import Delivery from '../images/Delivery.png';
 import Cart from '../images/Cart.png';
+import camera from '../images/Profile.png';
+
 import PropTypes from 'prop-types';
+import {SearchBar} from 'react-native-elements';
+
+import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 const CustomCard = props => {
   const {
@@ -40,16 +45,21 @@ CustomCard.propTypes = {
 };
 const HomePage = () => {
   return (
-    <>
+    <View style={styles.Container}>
       <View style={styles.topBarStyles}>
-        <Text>menu</Text>
-        <Text>search</Text>
-        <Text>profile</Text>
+        <EvilIcons style={{fontSize: 35}} name="navicon" />
+        <SearchBar
+          placeholder="Search here"
+          onPress={() => Alert.alert('onPress')}
+          onChangeText={text => console.log(text)}
+          style={styles.TopSearchBarStyles}
+        />
+        <Image style={styles.ImageStyles} source={camera} />
       </View>
 
       <View style={styles.card}>
         <CustomCard
-          Heading={'Medicine'}
+          Heading={'MEDICINES'}
           SubHeading={'Total Stock'}
           ImageSource={Medicine}
           color1={'#C491F9'}
@@ -73,11 +83,15 @@ const HomePage = () => {
           onpress={() => Alert.alert('Requests Card')}
         />
       </View>
-    </>
+    </View>
   );
 };
 
 const styles = StyleSheet.create({
+  Container: {
+    backgroundColor: '#ffffff',
+    flex: 1,
+  },
   linearGradient: {
     paddingLeft: 15,
     paddingRight: 15,
@@ -109,18 +123,17 @@ const styles = StyleSheet.create({
     height: '70%',
     alignItems: 'center',
     justifyContent: 'center',
-    top: '5%',
+    top: 10,
   },
   topBarStyles: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    backgroundColor: 'yellow',
     width: '100%',
     height: '8%',
+    top: 15,
   },
   CardHeading: {
-    fontFamily: 'Roboto',
     fontSize: 24,
     fontWeight: '700',
     top: '10%',
@@ -128,9 +141,8 @@ const styles = StyleSheet.create({
     color: 'white',
   },
   CardSubHeading: {
-    fontFamily: 'Roboto',
     fontSize: 24,
-    fontWeight: '500',
+    fontWeight: '700',
     top: '40%',
     left: '5%',
     color: 'white',
@@ -138,6 +150,21 @@ const styles = StyleSheet.create({
   ImageStyle: {
     left: '80%',
     top: '-35%',
+  },
+  TopSearchBarStyles: {
+    width: 277,
+    height: 40,
+    borderRadius: 20,
+    backgroundColor: '#ffffff',
+    borderWidth: 1,
+    borderColor: '#C4C4C4',
+  },
+  ImageStyles: {
+    width: 30,
+    height: 30,
+    borderWidth: 1,
+    borderColor: '#2AC0EF',
+    borderRadius: 30,
   },
 });
 

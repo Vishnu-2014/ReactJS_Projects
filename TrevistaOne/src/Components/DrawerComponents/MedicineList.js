@@ -7,15 +7,16 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {DropDown} from '../shared';
-import SearchBar from 'react-native-dynamic-search-bar';
+import {SearchBar} from 'react-native-elements';
+
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import MedicineSymbol from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/MedicineSymbol.png';
-import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/Profile.png';
+import MedicineSymbol from '../../images/MedicineSymbol.png';
+import camera from '../../images/Profile.png';
 
 import SignIn from '../SignIn';
 import SignUp from '../SignUp';
