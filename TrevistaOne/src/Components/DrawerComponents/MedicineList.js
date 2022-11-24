@@ -1,25 +1,25 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {StyleSheet, View, Alert, Text, Image} from 'react-native';
+import {SearchBar} from 'react-native-elements';
 
+//------------------Navigation_Components-----------------//
 import 'react-native-gesture-handler';
 import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {DropDown} from '../shared';
-import SearchBar from 'react-native-dynamic-search-bar';
 
+//------------------ICONS-----------------//
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import MedicineSymbol from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/MedicineSymbol.png';
-import camera from '/Users/Trevista/Documents/GitHub/ReactNative_Projects/TrevistaOne/src/images/Profile.png';
-
-import SignIn from '../SignIn';
-import SignUp from '../SignUp';
+//------------------IMAGES-----------------//
+import MedicineSymbol from '../../images/MedicineSymbol.png';
+import camera from '../../images/Profile.png';
 
 const Drawer = createDrawerNavigator();
 
@@ -34,7 +34,7 @@ const MyDrawer = () => {
   );
 };
 
-const MedicineList = ({navigation}) => {
+const MedicineList = () => {
   const CustomGridElements = props => {
     return <Text style={styles.TextBoxStyle}>{props}</Text>;
   };
@@ -46,13 +46,7 @@ const MedicineList = ({navigation}) => {
   return (
     <View style={styles.container}>
       <View style={styles.topBarStyles}>
-        <EvilIcons
-          style={{fontSize: 35}}
-          name="navicon"
-          onPress={() => {
-            navigation.openDrawer();
-          }}
-        />
+        <EvilIcons style={{fontSize: 35}} name="navicon" />
         <SearchBar
           placeholder="Search here"
           onPress={() => Alert.alert('onPress')}

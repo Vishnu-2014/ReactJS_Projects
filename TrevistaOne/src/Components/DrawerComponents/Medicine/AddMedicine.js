@@ -12,13 +12,12 @@ import {
 } from 'react-native';
 
 import {SearchBar} from 'react-native-elements';
-import DateTimePicker from '@react-native-community/datetimepicker';
 
-import {DropDown} from '../shared';
-import {addMedicineFields, fieldTypes} from '../../utils/Constants';
+import DropDown from '../../shared/DropDown.js';
+import {addMedicineFields, fieldTypes} from '../../../utils/Constants';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
-import camera from '../../images/Profile.png';
+import camera from '../../../images/Profile.png';
 
 const AddMedicine = () => {
   const CustomFields = item => {
