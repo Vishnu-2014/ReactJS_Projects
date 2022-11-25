@@ -1,18 +1,38 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {StyleSheet, View, Alert, Text, Image} from 'react-native';
-
-import {DropDown} from '../shared';
 import {SearchBar} from 'react-native-elements';
 
+//------------------Navigation_Components-----------------//
+import 'react-native-gesture-handler';
+import {createDrawerNavigator} from '@react-navigation/drawer';
+import {NavigationContainer} from '@react-navigation/native';
+
+import {DropDown} from '../shared';
+
+//------------------ICONS-----------------//
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
+//------------------IMAGES-----------------//
 import MedicineSymbol from '../../images/MedicineSymbol.png';
 import camera from '../../images/Profile.png';
+
+const Drawer = createDrawerNavigator();
+
+const MyDrawer = () => {
+  return (
+    <NavigationContainer>
+      <Drawer.Navigator>
+        <Drawer.Screen name="Feed" component={SignIn} />
+        <Drawer.Screen name="Article" component={SignUp} />
+      </Drawer.Navigator>
+    </NavigationContainer>
+  );
+};
 
 const MedicineList = () => {
   const CustomGridElements = props => {

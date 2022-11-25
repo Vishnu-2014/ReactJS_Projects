@@ -2,10 +2,9 @@
 /* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
 
+import 'react-native-gesture-handler';
 import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
 import React, {useState, useEffect} from 'react';
-
-import 'react-native-gesture-handler';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -17,10 +16,7 @@ import HomePage from './Components/HomePage';
 import OtpAuthentication from './Components/OtpAuthentication';
 import OtpVerification from './Components/OtpVerification';
 import Details from './Components/Details';
-import MedicineType from './Components/DrawerComponents/MedicineType';
-import MedicineList from './Components/DrawerComponents/MedicineList';
-import AddMedicine from './Components/DrawerComponents/AddMedicine';
-import MedicineCategory from './Components/DrawerComponents/MedicineCategory';
+import {NavigationDrawerComponent} from './Components/DrawerComponents/NavigarionDrawerComponent';
 
 const Stack = createNativeStackNavigator();
 
@@ -39,10 +35,15 @@ const App = () => {
         <Home />
       ) : (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="MedicineCategory">
+          <Stack.Navigator initialRouteName="NavigationDrawerComponent">
             <Stack.Screen
               name="Home"
               component={Home}
+              options={{headerShown: false}}
+            />
+            <Stack.Screen
+              name="NavigationDrawerComponent"
+              component={NavigationDrawerComponent}
               options={{headerShown: false}}
             />
             <Stack.Screen
@@ -78,26 +79,6 @@ const App = () => {
             <Stack.Screen
               name="HomePage"
               component={HomePage}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="MedicineType"
-              component={MedicineType}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="MedicineList"
-              component={MedicineList}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="AddMedicine"
-              component={AddMedicine}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="MedicineCategory"
-              component={MedicineCategory}
               options={{headerShown: false}}
             />
           </Stack.Navigator>
