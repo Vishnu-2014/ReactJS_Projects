@@ -42,15 +42,18 @@ const renderInputField = (text, textInput) => {
   );
 };
 
-const MedicineCategory = () => {
+const ManageSuppliers = () => {
   return (
     <View style={styles.Container}>
+      <CustomTopView />
       <View style={styles.MainView}>
-        <Text style={styles.MedicineTypeTextStyles}>Medicine Category</Text>
+        <Text style={styles.MedicineTypeTextStyles}>Manage Suppliers</Text>
         <View style={styles.Card}>
           {renderInputField('Type Name', 'Type Name')}
           {renderInputField('Create Date', 'dd/mm/yyyy')}
           {renderInputField('Created By', 'Vishnu Reddy')}
+
+          <TextInput multiline={true} />
 
           <Button color={'#2AC0EF'} title="Save" />
         </View>
@@ -66,15 +69,15 @@ const styles = StyleSheet.create({
   },
   MainView: {
     alignItems: 'center',
+    bottom: 100,
   },
   MedicineTypeTextStyles: {
     fontSize: 25,
-    top: 20,
+    bottom: 120,
     color: '#757272',
   },
 
   Card: {
-    top: 40,
     height: 420,
     width: '90%',
     backgroundColor: '#ffffff',
@@ -83,6 +86,7 @@ const styles = StyleSheet.create({
     borderColor: '#C4C4C4',
     alignItems: 'center',
     justifyContent: 'space-evenly',
+    bottom: 100,
   },
   textInputStyles: {
     width: '90%',
@@ -98,4 +102,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default MedicineCategory;
+export default ManageSuppliers;

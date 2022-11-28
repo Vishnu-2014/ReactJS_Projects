@@ -9,6 +9,7 @@ import {createDrawerNavigator} from '@react-navigation/drawer';
 import {NavigationContainer} from '@react-navigation/native';
 
 import {DropDown} from '../shared';
+import CustomSearchBar from '../../utils/SearcBarTest';
 
 //------------------ICONS-----------------//
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
@@ -45,17 +46,6 @@ const MedicineList = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.topBarStyles}>
-        <EvilIcons style={{fontSize: 35}} name="navicon" />
-        <SearchBar
-          placeholder="Search here"
-          onPress={() => Alert.alert('onPress')}
-          onChangeText={text => console.log(text)}
-          style={styles.TopSearchBarStyles}
-        />
-        <Image style={styles.ImageStyles} source={camera} />
-      </View>
-
       <View
         style={{
           flexDirection: 'row',
@@ -76,11 +66,7 @@ const MedicineList = () => {
         <DropDown style={{width: 100}} />
         {HeadingText('Show')}
 
-        <SearchBar
-          placeholder="Search here"
-          onPress={() => Alert.alert('onPress')}
-          onChangeText={text => console.log(text)}
-        />
+        <CustomSearchBar />
 
         {HeadingText('Show')}
         <View style={styles.GridBoxStyles}>

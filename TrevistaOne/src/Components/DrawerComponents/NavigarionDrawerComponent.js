@@ -20,9 +20,27 @@ const NavigationDrawerComponent = () => {
           headerTitle: () => <NavHeaderTitle title="Medicine" />,
         }}
       />
-      <Drawer.Screen name="MedicineList" component={MedicineList} />
-      <Drawer.Screen name="AddMedicine" component={AddMedicine} />
-      <Drawer.Screen name="MedicineCategory" component={MedicineCategory} />
+      <Drawer.Screen
+        name="MedicineList"
+        component={MedicineList}
+        options={{
+          headerTitle: () => <NavHeaderTitle title="Medicine" />,
+        }}
+      />
+      <Drawer.Screen
+        name="AddMedicine"
+        component={AddMedicine}
+        options={{
+          headerTitle: () => <NavHeaderTitle title="Medicine" />,
+        }}
+      />
+      <Drawer.Screen
+        name="MedicineCategory"
+        component={MedicineCategory}
+        options={{
+          headerTitle: () => <NavHeaderTitle title="Medicine" />,
+        }}
+      />
     </Drawer.Navigator>
   );
 };

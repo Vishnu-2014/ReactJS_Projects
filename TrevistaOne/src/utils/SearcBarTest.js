@@ -2,7 +2,7 @@ import * as React from 'react';
 import {StyleSheet, View} from 'react-native';
 import SearchBar from 'react-native-elements/dist/searchbar/SearchBar';
 
-const searchBar = () => {
+const CustomSearchBar = () => {
   return (
     <SearchBar
       placeholder="Type Here..."
@@ -16,18 +16,18 @@ const searchBar = () => {
 const styles = StyleSheet.create({
   SearchBarContainerStyle: {
     backgroundColor: '#ffffff',
-    width: '70%',
-    height: '6%',
-    borderRadius: 20,
-    borderWidth: 1,
+    width: '80%',
+    borderTopWidth: 0,
+    borderBottomWidth: 0,
   },
   SearchBarInputContainerStyle: {
-    backgroundColor: '#grey',
+    backgroundColor: '#ffffff',
     width: '100%',
-    height: '100%',
+    height: 40,
     borderRadius: 10,
-    alignSelf: 'center',
+    borderWidth: 1,
+    borderBottomWidth: 1,
   },
 });
 
-export default searchBar;
+export default CustomSearchBar;
