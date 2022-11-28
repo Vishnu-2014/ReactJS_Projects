@@ -1,17 +1,7 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  StyleSheet,
-  TextInput,
-  Button,
-  Alert,
-} from 'react-native';
-
-import CustomTopView from '../shared/CustomTopView';
+import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
 
 const renderInputField = (text, textInput) => {
   return (

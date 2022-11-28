@@ -5,12 +5,8 @@ import LinearGradient from 'react-native-linear-gradient';
 import Medicine from '../images/Medicine.png';
 import Delivery from '../images/Delivery.png';
 import Cart from '../images/Cart.png';
-import camera from '../images/Profile.png';
 
 import PropTypes from 'prop-types';
-import {SearchBar} from 'react-native-elements';
-
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 const CustomCard = props => {
   const {
@@ -46,17 +42,6 @@ CustomCard.propTypes = {
 const HomePage = () => {
   return (
     <View style={styles.Container}>
-      <View style={styles.topBarStyles}>
-        <EvilIcons style={{fontSize: 35}} name="navicon" />
-        <SearchBar
-          placeholder="Search here"
-          onPress={() => Alert.alert('onPress')}
-          onChangeText={text => console.log(text)}
-          style={styles.TopSearchBarStyles}
-        />
-        <Image style={styles.ImageStyles} source={camera} />
-      </View>
-
       <View style={styles.card}>
         <CustomCard
           Heading={'MEDICINES'}

@@ -23,8 +23,8 @@ const styles = StyleSheet.create({
   SearchBarInputContainerStyle: {
     backgroundColor: '#ffffff',
     width: '100%',
-    height: 40,
-    borderRadius: 10,
+    height: 35,
+    borderRadius: 20,
     borderWidth: 1,
     borderBottomWidth: 1,
   },
