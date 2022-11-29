@@ -14,8 +14,8 @@ const CustomCard = props => {
     SubHeading = 'Stock Total',
     ImageSource = 'Medicine',
     onpress = () => {},
-    color1 = '#C491F9',
-    color2 = '#B575F5',
+    color1 = '',
+    color2 = '',
   } = props;
   return (
     <Pressable onPress={onpress}>

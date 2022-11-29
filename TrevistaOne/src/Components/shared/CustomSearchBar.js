@@ -1,5 +1,6 @@
+/* eslint-disable prettier/prettier */
 import * as React from 'react';
-import {StyleSheet, View} from 'react-native';
+import {StyleSheet} from 'react-native';
 import SearchBar from 'react-native-elements/dist/searchbar/SearchBar';
 
 const CustomSearchBar = () => {

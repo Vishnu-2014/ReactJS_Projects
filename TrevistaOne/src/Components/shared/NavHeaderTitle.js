@@ -1,49 +1,25 @@
+/* eslint-disable prettier/prettier */
 import React from 'react';
 import PropTypes from 'prop-types';
-import {View, StyleSheet, Text, Image} from 'react-native';
-import {logoColor, white} from '../../themes/colors';
-import Profile from '../../images/Profile.png';
-import {SearchBar} from 'react-native-elements';
+import {View, StyleSheet, Image} from 'react-native';
 
-import CustomSearchBar from '../../utils/SearcBarTest';
+import CustomSearchBar from '../../Components/shared/CustomSearchBar';
 
 const NavHeaderTitle = props => {
-  const {title = 'Button', icon, titleExtraStyle} = props;
+  const {icon} = props;
   return (
-    <View
-      style={{
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center',
-        width: '100%',
-      }}>
+    <View style={styles.Card}>
       <CustomSearchBar />
-      <Image style={styles.ImageStyles} source={Profile} />
+      <Image style={styles.ImageStyles} source={icon} />
     </View>
   );
 };
 
 NavHeaderTitle.propTypes = {
-  title: PropTypes.string.isRequired,
-  icon: PropTypes.object,
-  titleExtraStyle: PropTypes.object,
+  icon: PropTypes.object.isRequired,
 };
 
 const styles = StyleSheet.create({
-  buttonStyle: {
-    margin: 16,
-    backgroundColor: logoColor,
-    borderRadius: 10,
-    width: 100,
-    alignItems: 'center',
-    justifyContent: 'center',
-    height: 50,
-  },
-  textStyle: {
-    color: white,
-    fontSize: 16,
-    fontWeight: 'bold',
-  },
   ImageStyles: {
     width: 30,
     height: 30,
@@ -51,18 +27,11 @@ const styles = StyleSheet.create({
     borderColor: '#2AC0EF',
     borderRadius: 30,
   },
-  SearchBarContainerStyle: {
-    backgroundColor: '#ffffff',
-    width: '80%',
-    borderTopWidth: 0,
-    borderBottomWidth: 0,
-  },
-  SearchBarInputContainerStyle: {
-    backgroundColor: '#ffffff',
+  Card: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     width: '100%',
-    height: '90%',
-    borderRadius: 10,
-    borderWidth: 1,
   },
 });
 export {NavHeaderTitle};

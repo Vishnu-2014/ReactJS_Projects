@@ -1,21 +1,16 @@
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
-import {react, useState} from 'react';
+import * as React from 'react';
 import {
   View,
   Text,
   TextInput,
   StyleSheet,
   Image,
-  Alert,
   ScrollView,
 } from 'react-native';
 
-import {SearchBar} from 'react-native-elements';
-
 import DropDown from '../../shared/DropDown.js';
 import {addMedicineFields, fieldTypes} from '../../../utils/Constants';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
 
 import camera from '../../../images/Profile.png';
 
@@ -44,12 +39,6 @@ const AddMedicine = () => {
   return (
     <View style={styles.container}>
       <View style={styles.topBarStyles}>
-        {/* <SearchBar
-          placeholder="Type Here..."
-          containerStyle={styles.SearchBarContainerStyle}
-          inputContainerStyle={styles.SearchBarInputContainerStyle}
-          searchIcon={null}
-        /> */}
         <Image style={styles.ImageStyles} source={camera} />
       </View>
 

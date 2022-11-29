@@ -1,39 +1,21 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {StyleSheet, View, Alert, Text, Image} from 'react-native';
-import {SearchBar} from 'react-native-elements';
+import {StyleSheet, View, Text, Image} from 'react-native';
 
 //------------------Navigation_Components-----------------//
 import 'react-native-gesture-handler';
-import {createDrawerNavigator} from '@react-navigation/drawer';
-import {NavigationContainer} from '@react-navigation/native';
 
 import {DropDown} from '../shared';
-import CustomSearchBar from '../../utils/SearcBarTest';
+import CustomSearchBar from '../../Components/shared/CustomSearchBar';
 
 //------------------ICONS-----------------//
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 
 //------------------IMAGES-----------------//
 import MedicineSymbol from '../../images/MedicineSymbol.png';
-import camera from '../../images/Profile.png';
-
-const Drawer = createDrawerNavigator();
-
-const MyDrawer = () => {
-  return (
-    <NavigationContainer>
-      <Drawer.Navigator>
-        <Drawer.Screen name="Feed" component={SignIn} />
-        <Drawer.Screen name="Article" component={SignUp} />
-      </Drawer.Navigator>
-    </NavigationContainer>
-  );
-};
 
 const MedicineList = () => {
   const CustomGridElements = props => {
@@ -46,16 +28,9 @@ const MedicineList = () => {
 
   return (
     <View style={styles.container}>
-      <View
-        style={{
-          flexDirection: 'row',
-          alignItems: 'center',
-          justifyContent: 'space-evenly',
-          width: '100%',
-          top: 10,
-        }}>
-        <Ionicons style={{fontSize: 35, color: '#666666'}} name="arrow-back" />
-        <Text style={{fontSize: 20, fontWeight: '600', color: '#666666'}}>
+      <View style={styles.MedicineTypeBoxStyles}>
+        <Ionicons style={styles.BackIconStyles} name="arrow-back" />
+        <Text style={styles.MedicineTypeTextStyles}>
           Medicine Type Information
         </Text>
         <Image source={MedicineSymbol} />
@@ -63,12 +38,12 @@ const MedicineList = () => {
 
       <View style={styles.Card}>
         {HeadingText('Show')}
-        <DropDown style={{width: 100}} />
-        {HeadingText('Show')}
+        <DropDown />
+        {HeadingText('Search')}
 
         <CustomSearchBar />
 
-        {HeadingText('Show')}
+        {HeadingText('Entries')}
         <View style={styles.GridBoxStyles}>
           {CustomGridElements('Type Name')}
           {CustomGridElements('Type 1')}
@@ -87,23 +62,11 @@ const MedicineList = () => {
         </View>
       </View>
 
-      <Text style={{top: 30, fontSize: 14, fontWeight: '500'}}>
-        Show 1 to 1 of 1 Entries
-      </Text>
+      <Text style={styles.NextEntriesTextStyle}>Show 1 to 1 of 1 Entries</Text>
 
-      <View
-        style={{
-          flexDirection: 'row',
-          top: 50,
-          alignItems: 'center',
-          justifyContent: 'space-evenly',
-          width: 100,
-        }}>
+      <View style={styles.NextEntriesViewStyle}>
         <FontAwesome name="backward" style={styles.EntriesIconStyle} />
-        <Text
-          style={{backgroundColor: '#3CCCF9', padding: 4.5, color: '#ffffff'}}>
-          01
-        </Text>
+        <Text style={styles.EntriesCountStyle}>01</Text>
         <FontAwesome
           name="backward"
           style={[styles.EntriesIconStyle, {transform: [{rotateY: '180deg'}]}]}
@@ -207,6 +170,39 @@ const styles = StyleSheet.create({
     backgroundColor: '#F6F6F6',
     color: '#666666',
     padding: 4,
+  },
+  MedicineTypeBoxStyles: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    width: '100%',
+    top: 10,
+  },
+  BackIconStyles: {
+    fontSize: 35,
+    color: '#666666',
+  },
+  MedicineTypeTextStyles: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#666666',
+  },
+  NextEntriesTextStyle: {
+    top: 30,
+    fontSize: 14,
+    fontWeight: '500',
+  },
+  NextEntriesViewStyle: {
+    flexDirection: 'row',
+    top: 50,
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    width: 100,
+  },
+  EntriesCountStyle: {
+    backgroundColor: '#3CCCF9',
+    padding: 4.5,
+    color: '#ffffff',
   },
 });
 

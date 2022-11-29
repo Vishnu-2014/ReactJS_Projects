@@ -1,21 +1,11 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
 
 const renderInputField = (text, textInput) => {
   return (
     <>
-      <Text
-        style={{
-          fontSize: 18,
-          color: '#757272',
-          alignSelf: 'flex-start',
-          left: 20,
-          fontWeight: '500',
-        }}>
-        {text}
-      </Text>
+      <Text style={styles.renderInputFieldTextComponent}>{text}</Text>
       <TextInput
         style={[
           styles.textInputStyles,
@@ -42,6 +32,14 @@ const ManageSuppliers = () => {
           {renderInputField('Create Date', 'dd/mm/yyyy')}
           {renderInputField('Created By', 'Vishnu Reddy')}
 
+          <Text style={styles.renderInputFieldTextComponent}>Description</Text>
+
+          <TextInput
+            multiline={true}
+            textAlignVertical="top"
+            style={styles.MultiLineTextInputStyles}
+          />
+
           <Button color={'#2AC0EF'} title="Save" />
         </View>
       </View>
@@ -65,8 +63,8 @@ const styles = StyleSheet.create({
 
   Card: {
     top: 40,
-    height: 420,
-    width: '90%',
+    height: 520,
+    width: '85%',
     backgroundColor: '#ffffff',
     borderRadius: 20,
     borderWidth: 2,
@@ -85,6 +83,21 @@ const styles = StyleSheet.create({
   MedicineTypeInfoTextStyle: {
     fontSize: 20,
     color: '#2AC0EF',
+  },
+  renderInputFieldTextComponent: {
+    fontSize: 18,
+    color: '#757272',
+    alignSelf: 'flex-start',
+    left: 20,
+    fontWeight: '500',
+    marginTop: 30,
+  },
+  MultiLineTextInputStyles: {
+    height: 83,
+    width: '90%',
+    borderWidth: 1,
+    borderRadius: 10,
+    borderColor: '#C4C4C4',
   },
 });
 
