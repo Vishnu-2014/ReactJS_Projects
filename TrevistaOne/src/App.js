@@ -1,10 +1,8 @@
-/* eslint-disable no-return-assign */
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
 
+import * as React from 'react';
+import {useEffect} from 'react';
 import 'react-native-gesture-handler';
-import {View, Text, StyleSheet, Image, TouchableOpacity} from 'react-native';
-import React, {useState, useEffect} from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
 
@@ -12,7 +10,6 @@ import Welcome from './Components/Welcome';
 import SignIn from './Components/SignIn';
 import SignUp from './Components/SignUp';
 import Home from './Components/Home';
-import HomePage from './Components/HomePage';
 import OtpAuthentication from './Components/OtpAuthentication';
 import OtpVerification from './Components/OtpVerification';
 import Details from './Components/Details';
@@ -35,7 +32,7 @@ const App = () => {
         <Home />
       ) : (
         <NavigationContainer>
-          <Stack.Navigator initialRouteName="NavigationDrawerComponent">
+          <Stack.Navigator initialRouteName="Welcome">
             <Stack.Screen
               name="Home"
               component={Home}
@@ -47,7 +44,7 @@ const App = () => {
               options={{headerShown: false}}
             />
             <Stack.Screen
-              name="welcome"
+              name="Welcome"
               component={Welcome}
               options={{headerShown: false}}
             />
@@ -74,11 +71,6 @@ const App = () => {
             <Stack.Screen
               name="Details"
               component={Details}
-              options={{headerShown: false}}
-            />
-            <Stack.Screen
-              name="HomePage"
-              component={HomePage}
               options={{headerShown: false}}
             />
           </Stack.Navigator>

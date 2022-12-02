@@ -1,15 +1,9 @@
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 import React from 'react';
-import {
-  View,
-  Text,
-  ScrollView,
-  StyleSheet,
-  TextInput,
-  Button,
-  Alert,
-} from 'react-native';
+import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
+import CustomTopView from '../shared/CustomTopView';
+import MedicineSymbol from '../../images/MedicineSymbol.png';
 
 const renderInputField = (text, textInput) => {
   return (
@@ -44,13 +38,7 @@ const MedicineType = () => {
   return (
     <View style={styles.Container}>
       <View style={styles.MainView}>
-        {/* <LinearGradient
-          style={styles.linearGradient}
-          start={{x: 0, y: 0}}
-          end={{x: 1, y: 0}}
-          colors={['#2AC0EF', '#58D8F9']}>
-          <Text style={styles.MedicineTypeTextStyles}>Medicine Type</Text>
-        </LinearGradient> */}
+        <CustomTopView title="Medicine Type" ImageSource={MedicineSymbol} />
         <View style={styles.Card}>
           {renderInputField('Type Name', 'Type Name')}
           {renderInputField('Create Date', 'dd/mm/yyyy')}
@@ -70,6 +58,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   MainView: {
+    flex: 1,
     alignItems: 'center',
   },
   MedicineTypeTextStyles: {
@@ -82,7 +71,7 @@ const styles = StyleSheet.create({
   },
   Card: {
     height: 450,
-    width: '90%',
+    width: '85%',
     backgroundColor: '#ffffff',
     borderRadius: 20,
     marginTop: 30,

@@ -1,14 +1,6 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
-import {
-  View,
-  Image,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StyleSheet,
-} from 'react-native';
+import * as React from 'react';
+import {View, Image, Text, TextInput, StyleSheet} from 'react-native';
 import otpImage from '../images/OtpImage.png';
 import {CustomButton} from './shared/CustomButton';
 
@@ -24,9 +16,7 @@ const OtpAuthentication = ({navigation, route}) => {
         </View>
         <View style={styles.numberStyle}>
           <Text>Enter Mobile Number</Text>
-          <TextInput
-            style={styles.textInputStyle}
-            keyboardType="number-pad"></TextInput>
+          <TextInput style={styles.textInputStyle} keyboardType="number-pad" />
         </View>
         <CustomButton
           title={'Get Otp'}

@@ -17,7 +17,7 @@ import CustomTopView from '../../shared/CustomTopView';
 
 import {addRequestFields, fieldTypes} from '../../../utils/Constants';
 
-const AddStock = () => {
+const ReturningInformation = () => {
   const CustomFields = item => {
     const {title, type} = item;
     return (
@@ -41,7 +41,10 @@ const AddStock = () => {
   };
   return (
     <View style={styles.container}>
-      <CustomTopView title="Add Stock" ImageSource={MedicineSymbol} />
+      <CustomTopView
+        title="Returning Information"
+        ImageSource={MedicineSymbol}
+      />
       <ScrollView style={styles.ScrollViewStyles}>
         {addRequestFields.map(item => {
           return CustomFields(item);
@@ -114,4 +117,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default AddStock;
+export default ReturningInformation;

@@ -1,24 +1,16 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
+import CustomTopView from '../shared/CustomTopView';
+import MedicineSymbol from '../../images/MedicineSymbol.png';
 
 const renderInputField = (text, textInput) => {
   return (
     <>
-      <Text
-        style={{
-          fontSize: 18,
-          color: '#757272',
-          alignSelf: 'flex-start',
-          left: 20,
-          fontWeight: '500',
-        }}>
-        {text}
-      </Text>
+      <Text style={styles.renderInputFieldTextStyle}>{text}</Text>
       <TextInput
         style={[
-          styles.textInputStyles,
+          styles.renderInputFieldtextInputStyles,
           {
             backgroundColor:
               textInput === 'Vishnu Reddy' ? '#E5E5E5' : '#ffffff',
@@ -36,7 +28,7 @@ const MedicineCategory = () => {
   return (
     <View style={styles.Container}>
       <View style={styles.MainView}>
-        <Text style={styles.MedicineTypeTextStyles}>Medicine Category</Text>
+        <CustomTopView title="Medicine Category" ImageSource={MedicineSymbol} />
         <View style={styles.Card}>
           {renderInputField('Type Name', 'Type Name')}
           {renderInputField('Create Date', 'dd/mm/yyyy')}
@@ -55,6 +47,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   MainView: {
+    flex: 1,
     alignItems: 'center',
   },
   MedicineTypeTextStyles: {
@@ -66,7 +59,7 @@ const styles = StyleSheet.create({
   Card: {
     top: 40,
     height: 420,
-    width: '90%',
+    width: '85%',
     backgroundColor: '#ffffff',
     borderRadius: 20,
     borderWidth: 2,
@@ -74,7 +67,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-evenly',
   },
-  textInputStyles: {
+  renderInputFieldtextInputStyles: {
     width: '90%',
     height: 41,
     borderWidth: 2,
@@ -85,6 +78,13 @@ const styles = StyleSheet.create({
   MedicineTypeInfoTextStyle: {
     fontSize: 20,
     color: '#2AC0EF',
+  },
+  renderInputFieldTextStyle: {
+    fontSize: 18,
+    color: '#757272',
+    alignSelf: 'flex-start',
+    left: 20,
+    fontWeight: '500',
   },
 });
 

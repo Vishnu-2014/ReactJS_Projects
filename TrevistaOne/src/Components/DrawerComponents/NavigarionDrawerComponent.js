@@ -2,22 +2,28 @@
 import 'react-native-gesture-handler';
 import * as React from 'react';
 import {createDrawerNavigator} from '@react-navigation/drawer';
-import HomePage from '../HomePage';
+import AdminDashboard from '../AdminDashboard';
 import MedicineType from '../DrawerComponents/MedicineType';
 import MedicineList from '../DrawerComponents/MedicineList';
 import AddMedicine from '../DrawerComponents/Medicine/AddMedicine';
 import MedicineCategory from '../DrawerComponents/MedicineCategory';
 import ManageSuppliers from './ManageSuppliers';
+import ReceivingInformation from './Receiving/ReceivingInformation';
+import AddRequest from './Request/AddRequest';
+import AddStock from './Stocks/AddStock';
+import ReturningInformation from './Return/ReturningInformation';
+
 import {NavHeaderTitle} from '../shared/NavHeaderTitle';
+
 import Profile from '../../images/Profile.png';
 const Drawer = createDrawerNavigator();
 
 const NavigationDrawerComponent = () => {
   return (
-    <Drawer.Navigator initialRouteName="HomePage">
+    <Drawer.Navigator initialRouteName="AdminDashboard">
       <Drawer.Screen
-        name="HomePage"
-        component={HomePage}
+        name="AdminDashboard"
+        component={AdminDashboard}
         options={{
           headerTitle: () => <NavHeaderTitle icon={Profile} />,
         }}
@@ -30,8 +36,22 @@ const NavigationDrawerComponent = () => {
         }}
       />
       <Drawer.Screen
+        name="MedicineCategory"
+        component={MedicineCategory}
+        options={{
+          headerTitle: () => <NavHeaderTitle icon={Profile} />,
+        }}
+      />
+      <Drawer.Screen
         name="MedicineList"
         component={MedicineList}
+        options={{
+          headerTitle: () => <NavHeaderTitle icon={Profile} />,
+        }}
+      />
+      <Drawer.Screen
+        name="Suppliers"
+        component={ManageSuppliers}
         options={{
           headerTitle: () => <NavHeaderTitle icon={Profile} />,
         }}
@@ -43,16 +63,31 @@ const NavigationDrawerComponent = () => {
           headerTitle: () => <NavHeaderTitle icon={Profile} />,
         }}
       />
+
       <Drawer.Screen
-        name="MedicineCategory"
-        component={MedicineCategory}
+        name="Receiving Information"
+        component={ReceivingInformation}
         options={{
           headerTitle: () => <NavHeaderTitle icon={Profile} />,
         }}
       />
       <Drawer.Screen
-        name="ManageSuppliers"
-        component={ManageSuppliers}
+        name="Returning Information"
+        component={ReturningInformation}
+        options={{
+          headerTitle: () => <NavHeaderTitle icon={Profile} />,
+        }}
+      />
+      <Drawer.Screen
+        name="Add Stock"
+        component={AddStock}
+        options={{
+          headerTitle: () => <NavHeaderTitle icon={Profile} />,
+        }}
+      />
+      <Drawer.Screen
+        name="Add Request"
+        component={AddRequest}
         options={{
           headerTitle: () => <NavHeaderTitle icon={Profile} />,
         }}

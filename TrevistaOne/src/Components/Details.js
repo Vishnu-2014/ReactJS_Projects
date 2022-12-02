@@ -1,16 +1,15 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
+import * as React from 'react';
+import {useState} from 'react';
 import {
   StyleSheet,
   Text,
   TextInput,
   View,
   Image,
-  ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-import GradientImage from '../images/GradientImage.png';
+import LinearGradient from 'react-native-linear-gradient';
 import Camera from '../images/camera.png';
 
 const box = element => {
@@ -19,15 +18,23 @@ const box = element => {
       <Text style={styles.textStyles}>{element}</Text>
       <TextInput
         style={styles.textInputStyles}
-        placeholder={element}></TextInput>
+        placeholder={element === 'Date Of Birth' ? 'DD-MM-YYYY' : element}
+        placeholderTextColor="#D9D9D9"
+        onChangeText={() => setIsFill('Fill')}
+      />
     </>
   );
 };
 
 const Details = ({navigation}) => {
+  const [isFill, setIsFill] = useState('empty');
   return (
     <>
-      <ImageBackground style={styles.MainImage} source={GradientImage}>
+      <LinearGradient
+        style={styles.linearGradient}
+        start={{x: 1, y: 0}}
+        end={{x: 1, y: 1.2}}
+        colors={['#2AC0EF', '#1937FE']}>
         <View style={styles.Container}>
           <View style={styles.circleStyle}>
             <Image source={Camera} />
@@ -43,10 +50,16 @@ const Details = ({navigation}) => {
           style={styles.touchableStyles}
           onPress={() => navigation.navigate('SignIn')}>
           <View style={styles.buttonViewStyles}>
-            <Text style={styles.buttonTextStyles}>Complete</Text>
+            <Text
+              style={[
+                styles.buttonTextStyles,
+                isFill === 'Fill' ? {color: '#1937FE'} : false,
+              ]}>
+              Complete
+            </Text>
           </View>
         </TouchableOpacity>
-      </ImageBackground>
+      </LinearGradient>
     </>
   );
 };
@@ -57,7 +70,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'flex-start',
   },
-  MainImage: {
+  linearGradient: {
     width: '100%',
     height: '100%',
   },
@@ -92,8 +105,8 @@ const styles = StyleSheet.create({
   },
   buttonViewStyles: {
     backgroundColor: 'white',
-    width: '60%',
-    height: '30%',
+    width: '70%',
+    height: '25%',
     borderRadius: 20,
     alignItems: 'center',
     justifyContent: 'center',
@@ -104,7 +117,8 @@ const styles = StyleSheet.create({
   },
   buttonTextStyles: {
     fontSize: 20,
-    color: '#1F66F9',
+    fontWeight: '500',
+    color: '#C8C8C8',
   },
 });
 

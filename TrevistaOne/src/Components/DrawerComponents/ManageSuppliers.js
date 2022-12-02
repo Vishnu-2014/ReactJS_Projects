@@ -1,6 +1,8 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import {View, Text, StyleSheet, TextInput, Button} from 'react-native';
+import CustomTopView from '../shared/CustomTopView';
+import MedicineSymbol from '../../images/MedicineSymbol.png';
 
 const renderInputField = (text, textInput) => {
   return (
@@ -26,7 +28,7 @@ const ManageSuppliers = () => {
   return (
     <View style={styles.Container}>
       <View style={styles.MainView}>
-        <Text style={styles.MedicineTypeTextStyles}>Manage Suppliers</Text>
+        <CustomTopView title="Manage Suppliers" ImageSource={MedicineSymbol} />
         <View style={styles.Card}>
           {renderInputField('Type Name', 'Type Name')}
           {renderInputField('Create Date', 'dd/mm/yyyy')}
@@ -53,6 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: '#ffffff',
   },
   MainView: {
+    flex: 1,
     alignItems: 'center',
   },
   MedicineTypeTextStyles: {

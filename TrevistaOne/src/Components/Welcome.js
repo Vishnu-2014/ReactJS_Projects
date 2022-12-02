@@ -1,56 +1,69 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable prettier/prettier */
-import {Image, Text, View, StyleSheet, TouchableOpacity} from 'react-native';
+import * as React from 'react';
+import {Image, Text, View, StyleSheet, Pressable} from 'react-native';
 import vector from '../images/VectorW.png';
-import LinearGradient from 'react-native-linear-gradient';
-const Welcome = () => {
+
+const Welcome = ({navigation}) => {
   return (
-    <View>
+    <View style={styles.container}>
       <Image style={styles.Vector_styles} source={vector} />
       <Text style={styles.text_styles}>Welcome Back</Text>
-      <LinearGradient
-        start={{x: 0, y: 0}}
-        end={{x: 1, y: 0}}
-        colors={['#4c669f', '#3b5998', '#192f6a']}>
-        <TouchableOpacity style={styles.SignIn_button}>
-          <Text>Press Here</Text>
-        </TouchableOpacity>
-      </LinearGradient>
+      <View style={styles.buttonViewStyle}>
+        <Pressable
+          style={styles.buttonStyle}
+          onPress={() => navigation.navigate('SignIn')}>
+          <Text style={styles.buttonTextStyle}>SIGN IN</Text>
+        </Pressable>
+
+        <Pressable
+          style={styles.buttonStyle}
+          onPress={() => navigation.navigate('SignUp')}>
+          <Text style={styles.buttonTextStyle}>SIGN UP</Text>
+        </Pressable>
+      </View>
     </View>
   );
 };
 
 const styles = StyleSheet.create({
+  container: {
+    backgroundColor: '#fff',
+    flex: 1,
+  },
   Vector_styles: {
     position: 'absolute',
     left: '31%',
   },
+
   text_styles: {
-    position: 'absolute',
-    width: 142,
-    height: 68,
+    width: 180,
     left: 38,
-    top: 335,
-    fontFamily: 'Montserrat',
-    fontStyle: 'normal',
-    fontWeight: '400',
-    fontSize: 28,
-    lineHeight: 34,
-    color: '#3A3A3A',
+    top: 305,
+    fontWeight: '500',
+    fontSize: 35,
+    color: '#000',
   },
 
-  SignIn_button: {
-    position: 'absolute',
-    width: 315,
-    height: 72,
-    left: 28,
-    top: 563,
-    backgroundColor: 'skyblue',
-    borderRadius: 28,
+  buttonViewStyle: {
+    flexDirection: 'row',
+    width: '100%',
+    height: 50,
+    justifyContent: 'space-around',
+    top: 450,
+  },
+
+  buttonStyle: {
+    width: '40%',
+    height: '100%',
+    backgroundColor: '#2AC0EF',
     justifyContent: 'center',
     alignItems: 'center',
+  },
+
+  buttonTextStyle: {
+    fontSize: 16,
+    fontWeight: '600',
+    color: '#ffffff',
   },
 });
 
