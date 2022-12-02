@@ -6,10 +6,8 @@ import SearchBar from 'react-native-elements/dist/searchbar/SearchBar';
 const CustomSearchBar = () => {
   return (
     <SearchBar
-      placeholder="Type Here..."
       containerStyle={styles.SearchBarContainerStyle}
       inputContainerStyle={styles.SearchBarInputContainerStyle}
-      searchIcon={null}
     />
   );
 };

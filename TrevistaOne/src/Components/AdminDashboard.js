@@ -39,7 +39,7 @@ CustomCard.propTypes = {
   color2: PropTypes.string.isRequired,
   onPress: PropTypes.func.isRequired,
 };
-const HomePage = () => {
+const AdminDashboard = () => {
   return (
     <View style={styles.Container}>
       <View style={styles.card}>
@@ -153,4 +153,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default HomePage;
+export default AdminDashboard;

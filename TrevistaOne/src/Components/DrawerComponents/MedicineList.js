@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import {StyleSheet, View, Text, Image} from 'react-native';
+import {StyleSheet, View, Text} from 'react-native';
 
 //------------------Navigation_Components-----------------//
 import 'react-native-gesture-handler';
@@ -12,10 +12,10 @@ import CustomSearchBar from '../../Components/shared/CustomSearchBar';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import Ionicons from 'react-native-vector-icons/Ionicons';
 
 //------------------IMAGES-----------------//
 import MedicineSymbol from '../../images/MedicineSymbol.png';
+import CustomTopView from '../shared/CustomTopView';
 
 const MedicineList = () => {
   const CustomGridElements = props => {
@@ -28,14 +28,10 @@ const MedicineList = () => {
 
   return (
     <View style={styles.container}>
-      <View style={styles.MedicineTypeBoxStyles}>
-        <Ionicons style={styles.BackIconStyles} name="arrow-back" />
-        <Text style={styles.MedicineTypeTextStyles}>
-          Medicine Type Information
-        </Text>
-        <Image source={MedicineSymbol} />
-      </View>
-
+      <CustomTopView
+        title="Medicine Type Information"
+        ImageSource={MedicineSymbol}
+      />
       <View style={styles.Card}>
         {HeadingText('Show')}
         <DropDown />

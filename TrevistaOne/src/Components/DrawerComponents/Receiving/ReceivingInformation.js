@@ -15,9 +15,9 @@ import {DropDown} from '../../shared/DropDown';
 import MedicineSymbol from '../../../images/MedicineSymbol.png';
 import CustomTopView from '../../shared/CustomTopView';
 
-import {addRequestFields, fieldTypes} from '../../../utils/Constants';
+import {addReceiveFields, fieldTypes} from '../../../utils/Constants';
 
-const AddStock = () => {
+const ReceivingInformation = () => {
   const CustomFields = item => {
     const {title, type} = item;
     return (
@@ -41,9 +41,12 @@ const AddStock = () => {
   };
   return (
     <View style={styles.container}>
-      <CustomTopView title="Add Stock" ImageSource={MedicineSymbol} />
+      <CustomTopView
+        title="Receiving Information"
+        ImageSource={MedicineSymbol}
+      />
       <ScrollView style={styles.ScrollViewStyles}>
-        {addRequestFields.map(item => {
+        {addReceiveFields.map(item => {
           return CustomFields(item);
         })}
 
@@ -105,13 +108,6 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: '#C4C4C4',
   },
-  MultiLineTextInputStyles: {
-    height: 83,
-    width: '90%',
-    borderWidth: 1,
-    borderRadius: 10,
-    borderColor: '#C4C4C4',
-  },
 });
 
-export default AddStock;
+export default ReceivingInformation;

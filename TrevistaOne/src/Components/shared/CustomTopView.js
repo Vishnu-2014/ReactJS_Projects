@@ -1,27 +1,22 @@
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
-import {View, Alert, StyleSheet, Image} from 'react-native';
+import * as React from 'react';
+import {View, StyleSheet, Text, Image} from 'react-native';
+import PropTypes from 'prop-types';
+import Ionicons from 'react-native-vector-icons/Ionicons';
 
-import EvilIcons from 'react-native-vector-icons/EvilIcons';
-import {SearchBar} from 'react-native-elements';
-
-import camera from '../../images/Profile.png';
-
-const CustomTopView = () => {
+const CustomTopView = ({title, ImageSource}) => {
   return (
-    <View style={styles.container}>
-      <View style={styles.topBarStyles}>
-        <EvilIcons style={{fontSize: 35}} name="navicon" />
-        <SearchBar
-          placeholder="Search here"
-          onPress={() => Alert.alert('onPress')}
-          onChangeText={text => console.log(text)}
-          style={styles.TopSearchBarStyles}
-        />
-        <Image style={styles.ImageStyles} source={camera} />
-      </View>
+    <View style={styles.MedicineTypeBoxStyles}>
+      <Ionicons style={styles.BackIconStyles} name="arrow-back" />
+      <Text style={styles.MedicineTypeTextStyles}>{title}</Text>
+      <Image source={ImageSource} />
     </View>
   );
+};
+
+CustomTopView.propTypes = {
+  title: PropTypes.string.isRequired,
+  ImageSource: PropTypes.object.isRequired,
 };
 
 const styles = StyleSheet.create({
@@ -53,6 +48,22 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: '#2AC0EF',
     borderRadius: 30,
+  },
+  MedicineTypeBoxStyles: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-evenly',
+    width: '100%',
+    top: 10,
+  },
+  BackIconStyles: {
+    fontSize: 35,
+    color: '#666666',
+  },
+  MedicineTypeTextStyles: {
+    fontSize: 20,
+    fontWeight: '600',
+    color: '#666666',
   },
 });
 

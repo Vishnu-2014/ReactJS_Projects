@@ -1,7 +1,5 @@
 /* eslint-disable prettier/prettier */
-/* eslint-disable react/react-in-jsx-scope */
-/* eslint-disable react/jsx-no-undef */
-/* eslint-disable prettier/prettier */
+import * as React from 'react';
 import {
   StyleSheet,
   Image,
@@ -10,46 +8,66 @@ import {
   TextInput,
   TouchableOpacity,
 } from 'react-native';
-import Arrow from '../images/Arrow.png';
+import Vector from '../images/VectorW.png';
 
-const SignIn = ({navigation}) => {
+import Ionicons from 'react-native-vector-icons/Ionicons';
+
+const CustomFields = Input => {
   return (
     <>
-      <Image style={styles.Vector_styles} source={Arrow} />
-      <View style={styles.main}>
-        <View style={styles.card}>
-          <Text style={styles.sign_in_styles}>Sign In</Text>
-          <Text style={{color: '#B9B9B9'}}>email Address</Text>
-          <TextInput style={{borderBottomWidth: 2}} placeholder="email" />
-          <Text style={{color: '#B9B9B9'}}>Password</Text>
-          <TextInput style={{borderBottomWidth: 2}} placeholder="Password" />
-          <Text style={{color: '#2847FC'}}>Forget Password?</Text>
-          <TouchableOpacity onPress={() => navigation.navigate('HomePage')}>
-            <View style={styles.button_View}>
-              <Text style={{left: 30, fontSize: 20, color: 'white'}}>
-                Sign In
-              </Text>
-              <Image
-                style={{width: 30, height: 20, right: 30, color: '#FFFFFF'}}
-                source={Arrow}
-              />
-            </View>
-          </TouchableOpacity>
-        </View>
-
-        <View style={{top: 40, flexDirection: 'row'}}>
-          <Text>Don't Have An Account? </Text>
-          <Text style={{color: '#201C9C'}}>Sign Up</Text>
-        </View>
-      </View>
+      <Text style={styles.TextColor}>{Input}</Text>
+      <TextInput
+        underlineColorAndroid={'#000'}
+        placeholder={
+          Input === 'Email Address' ? 'Enter email' : 'Enter Password'
+        }
+      />
     </>
   );
 };
 
+const SignIn = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+      <Ionicons
+        style={styles.BackIconStyles}
+        onPress={() => navigation.navigate('Welcome')}
+        name="arrow-back"
+      />
+      <Image style={styles.Vector_styles} source={Vector} />
+      <View style={styles.main}>
+        <View style={styles.card}>
+          <Text style={styles.sign_in_styles}>Sign In</Text>
+
+          {CustomFields('Email Address')}
+          {CustomFields('Password')}
+
+          <Text style={{color: '#2847FC'}}>Forget Password?</Text>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('NavigationDrawerComponent')}>
+            <View style={styles.button_View}>
+              <Text style={styles.buttonTextStyles}>Sign In</Text>
+              <Ionicons style={styles.ArrowIconStyles} name="arrow-back" />
+            </View>
+          </TouchableOpacity>
+        </View>
+
+        <View style={styles.SignUpViewStyles}>
+          <Text>Don't Have An Account? </Text>
+          <Text style={{color: '#201C9C'}}>Sign Up</Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
 const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+  },
   Vector_styles: {
-    position: 'absolute',
-    left: '31%',
+    right: -124,
   },
 
   button_styles: {
@@ -58,18 +76,18 @@ const styles = StyleSheet.create({
   },
 
   button_View: {
-    width: '100%',
-    height: 40,
+    width: '90%',
+    height: 50,
     backgroundColor: '#2AC0EF',
     flexDirection: 'row',
     justifyContent: 'space-between',
     alignItems: 'center',
+    alignSelf: 'center',
     borderRadius: 28,
   },
 
   main: {
     flex: 1,
-    marginTop: 260,
     alignItems: 'center',
   },
 
@@ -110,6 +128,32 @@ const styles = StyleSheet.create({
     // marginLeft: '10%',
     // marginRight: '20%',
   },
+  TextColor: {
+    color: '#B9B9B9',
+    marginBottom: -30,
+    fontWeight: '500',
+    fontSize: 16,
+    left: 5,
+  },
+  BackIconStyles: {
+    position: 'absolute',
+    fontSize: 40,
+    left: 20,
+    top: 30,
+  },
+  ArrowIconStyles: {
+    fontSize: 35,
+    transform: [{rotate: '180deg'}],
+    right: 20,
+    color: '#fff',
+  },
+  buttonTextStyles: {
+    left: 30,
+    fontSize: 22,
+    color: 'white',
+    fontWeight: '500',
+  },
+  SignUpViewStyles: {top: 40, flexDirection: 'row'},
 });
 
 export default SignIn;

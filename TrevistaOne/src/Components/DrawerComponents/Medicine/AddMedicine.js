@@ -12,7 +12,8 @@ import {
 import DropDown from '../../shared/DropDown.js';
 import {addMedicineFields, fieldTypes} from '../../../utils/Constants';
 
-import camera from '../../../images/Profile.png';
+import MedicineSymbol from '../../../images/MedicineSymbol.png';
+import CustomTopView from '../../shared/CustomTopView';
 
 const AddMedicine = () => {
   const CustomFields = item => {
@@ -38,9 +39,7 @@ const AddMedicine = () => {
   };
   return (
     <View style={styles.container}>
-      <View style={styles.topBarStyles}>
-        <Image style={styles.ImageStyles} source={camera} />
-      </View>
+      <CustomTopView title="Add Medicine" ImageSource={MedicineSymbol} />
 
       <ScrollView style={styles.ScrollViewStyles}>
         {addMedicineFields.map(item => {
@@ -84,6 +83,7 @@ const styles = StyleSheet.create({
   },
   ScrollViewStyles: {
     width: '85%',
+    marginTop: 15,
     borderWidth: 1,
     borderRadius: 15,
     marginBottom: 10,

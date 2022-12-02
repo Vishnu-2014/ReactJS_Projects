@@ -1,6 +1,5 @@
-/* eslint-disable react/self-closing-comp */
-/* eslint-disable react/react-in-jsx-scope */
 /* eslint-disable prettier/prettier */
+import * as React from 'react';
 import {
   View,
   Image,
@@ -20,7 +19,9 @@ const OtpVerification = ({navigation, route}) => {
         <Image style={styles.imageStyles} source={otpImage} />
         <Text style={styles.otpStyles}>OTP Verification</Text>
 
-        <Text style={{top: '15%'}}>Enter The Otp Sent To +91{number}</Text>
+        <Text style={styles.EnterOtpTextStyles}>
+          Enter The OTP Sent To +91{number}
+        </Text>
         <View style={styles.numberStyle}>
           <TextInput style={styles.textInputStyle}></TextInput>
           <TextInput style={styles.textInputStyle}></TextInput>
@@ -28,10 +29,10 @@ const OtpVerification = ({navigation, route}) => {
           <TextInput style={styles.textInputStyle}></TextInput>
         </View>
 
-        <View style={{flexDirection: 'row', top: '38%'}}>
+        <View style={styles.resendOTPMainViewstyle}>
           <Text>Didn't You Recieve Otp? </Text>
           <TouchableOpacity>
-            <Text style={{color: 'purple', fontSize: 15}}>RESEND OTP</Text>
+            <Text style={styles.resendOTPstyle}>RESEND OTP</Text>
           </TouchableOpacity>
         </View>
         <CustomButton
@@ -40,14 +41,6 @@ const OtpVerification = ({navigation, route}) => {
           buttonExtraStyle={styles.getotpStyle}
         />
       </View>
-
-      {/* <TouchableOpacity
-        style={{backgroundColor: 'white'}}
-        onPress={() => navigation.navigate('Details')}>
-        <View style={styles.button_View}>
-          <Text style={styles.getotpStyle}>VERIFY</Text>
-        </View>
-      </TouchableOpacity> */}
     </>
   );
 };
@@ -100,7 +93,22 @@ const styles = StyleSheet.create({
     height: 300,
     top: '4%',
   },
-  getotpStyle: {color: 'white', fontSize: 20, top: '25%', fontFamily: 'lato'},
+  getotpStyle: {
+    color: 'white',
+    fontSize: 20,
+    top: '25%',
+    fontFamily: 'lato',
+  },
+  resendOTPstyle: {
+    color: 'purple',
+    fontSize: 15,
+  },
+  EnterOtpTextStyles: {
+    top: '13%',
+    fontSize: 17,
+    fontWeight: '500',
+  },
+  resendOTPMainViewstyle: {flexDirection: 'row', top: '38%'},
 });
 
 export default OtpVerification;

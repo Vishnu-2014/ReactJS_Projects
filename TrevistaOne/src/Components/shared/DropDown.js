@@ -43,8 +43,8 @@ const DropDown = porps => {
 
 const styles = StyleSheet.create({
   dropdown2BtnStyle: {
-    width: '80%',
-    height: 30,
+    width: '90%',
+    height: 35,
     backgroundColor: '#ffffff',
     borderRadius: 8,
     borderWidth: 1,
