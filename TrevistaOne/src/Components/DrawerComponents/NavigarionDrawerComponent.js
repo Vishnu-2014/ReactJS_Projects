@@ -12,6 +12,7 @@ import ReceivingInformation from './Receiving/ReceivingInformation';
 import AddRequest from './Request/AddRequest';
 import AddStock from './Stocks/AddStock';
 import ReturningInformation from './Return/ReturningInformation';
+import ManageMedicine from './Medicine/ManageMedicine';
 
 import {NavHeaderTitle} from '../shared/NavHeaderTitle';
 
@@ -56,13 +57,22 @@ const NavigationDrawerComponent = () => {
           headerTitle: () => <NavHeaderTitle icon={Profile} />,
         }}
       />
+      {/* Medicine drawer start */}
       <Drawer.Screen
-        name="AddMedicine"
+        name="Add Medicine"
         component={AddMedicine}
         options={{
           headerTitle: () => <NavHeaderTitle icon={Profile} />,
         }}
       />
+      <Drawer.Screen
+        name="Manage Medicine"
+        component={ManageMedicine}
+        options={{
+          headerTitle: () => <NavHeaderTitle icon={Profile} />,
+        }}
+      />
+      {/* Medicine drawer end */}
 
       <Drawer.Screen
         name="Receiving Information"
