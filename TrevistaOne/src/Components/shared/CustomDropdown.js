@@ -93,22 +93,20 @@ const CustomDropdown = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    paddingVertical: 16,
     alignItems: 'center',
     width: '100%',
-    backgroundColor: 'red',
   },
   viewStyles: {
     width: '80%',
-    height: '5%',
     backgroundColor: '#2AC0EF',
     marginTop: 15,
+    padding: 5,
     justifyContent: 'space-between',
     alignItems: 'center',
     flexDirection: 'row',
     paddingHorizontal: 10,
-    borderTopStartRadius: 10,
-    borderTopEndRadius: 10,
+    borderRadius: 10,
   },
   textStyles: {
     fontSize: 20,
@@ -117,6 +115,8 @@ const styles = StyleSheet.create({
   body: {
     width: '80%',
     borderWidth: 1,
+    marginTop: 5,
+    borderRadius: 10,
   },
   DownArrow: {
     transform: [{rotate: '90deg'}],

@@ -36,29 +36,30 @@ const ManageMedicine = () => {
     );
   };
   return (
-    <View style={styles.container}>
+    <>
       <CustomTopView title="Manage Medicine" ImageSource={MedicineSymbol} />
-      <Text style={[styles.CustomFieldsTextStyles, {left: 40, top: 10}]}>
-        Show
-      </Text>
-      <View style={{width: '85%', top: 15, alignItems: 'center'}}>
-        <DropDown />
-      </View>
-      <Text style={[styles.CustomFieldsTextStyles, {left: 35, top: 20}]}>
-        Entries
-      </Text>
-      <View style={styles.ScrollViewStyles}>
+      <ScrollView
+        style={styles.container}
+        contentContainerStyle={{alignItems: 'center'}}>
+        <Text style={[styles.CustomFieldsTextStyles, {left: 40, top: 10}]}>
+          Show
+        </Text>
+        <View style={{width: '85%', top: 15, alignItems: 'center'}}>
+          <DropDown />
+        </View>
+        <Text style={[styles.CustomFieldsTextStyles, {left: 35, top: 20}]}>
+          Entries
+        </Text>
         <CustomDropdown />
-      </View>
-    </View>
+      </ScrollView>
+    </>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
     backgroundColor: '#fff',
-    alignItems: 'center',
+    marginTop: 15,
   },
   ScrollViewStyles: {
     flex: 1,
