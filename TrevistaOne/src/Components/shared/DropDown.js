@@ -6,7 +6,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 import {StyleSheet} from 'react-native';
 
 const DropDown = porps => {
-  const countries = ['Egypt', 'Canada', 'Australia', 'Ireland'];
+  const countries = [1, 2, 3, 4, 5];
   return (
     <SelectDropdown
       data={countries}
