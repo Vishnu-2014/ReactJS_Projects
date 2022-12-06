@@ -14,27 +14,6 @@ import {addReceiveFields, fieldTypes} from '../../../utils/Constants';
 const data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
 const ManageMedicine = () => {
-  const CustomFields = item => {
-    const {title, type} = item;
-    return (
-      <View style={styles.CustomFieldsViewStyles}>
-        <Text style={styles.CustomFieldsTextStyles}>{title}</Text>
-        {type === fieldTypes.textInput ? (
-          <TextInput
-            style={[
-              styles.CustomFieldsTextInputStyles,
-              {backgroundColor: title === 'Batch Number' ? '#F6F6F6' : false},
-            ]}
-            value={title === 'Batch Number' ? 'B234Rtsh' : false}
-          />
-        ) : type === fieldTypes.date ? (
-          <Text>Date Element</Text>
-        ) : (
-          <DropDown />
-        )}
-      </View>
-    );
-  };
   return (
     <>
       <CustomTopView title="Manage Medicine" ImageSource={MedicineSymbol} />
@@ -50,6 +29,13 @@ const ManageMedicine = () => {
         <Text style={[styles.CustomFieldsTextStyles, {left: 35, top: 20}]}>
           Entries
         </Text>
+        <CustomDropdown />
+        <CustomDropdown />
+        <CustomDropdown />
+        <CustomDropdown />
+        <CustomDropdown />
+        <CustomDropdown />
+        <CustomDropdown />
         <CustomDropdown />
       </ScrollView>
     </>

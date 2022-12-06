@@ -7,7 +7,7 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const title = 'Vishnu';
+const title = 'BTCH-TV1234  :';
 const name = 'Paracetemol';
 const specs = 'specs';
 const category = '01';
@@ -25,7 +25,7 @@ const CustomDropdown = () => {
       <Pressable
         style={styles.viewStyles}
         onPress={() => setShowContent(!showContent)}>
-        <Text style={styles.textStyles}>{title}</Text>
+        <Text style={styles.textStyles}>Batch No - {title}</Text>
         <MaterialIcons
           name="keyboard-arrow-right"
           size={30}
@@ -93,7 +93,7 @@ const CustomDropdown = () => {
 
 const styles = StyleSheet.create({
   container: {
-    paddingVertical: 16,
+    marginTop: 10,
     alignItems: 'center',
     width: '100%',
   },
@@ -157,7 +157,7 @@ const styles = StyleSheet.create({
   },
   HeadingTextStyles: {fontSize: 28, fontWeight: '500'},
   SubHeadingTextStyles: {fontSize: 18, fontWeight: '500'},
-  ValueStyles: {fontSize: 14, color: '#2AC0EF'},
+  ValueStyles: {fontSize: 16, color: '#2AC0EF'},
 });
 
 export default CustomDropdown;
