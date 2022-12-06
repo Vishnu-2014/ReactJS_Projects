@@ -7,10 +7,13 @@ import MedicineSymbol from '../../../images/MedicineSymbol.png';
 import CustomTopView from '../../shared/CustomTopView';
 import CustomDropdown from '../../shared/CustomDropdown';
 
-const ManageMedicine = () => {
+const ManageReceivedItems = () => {
   return (
     <>
-      <CustomTopView title="Manage Medicine" ImageSource={MedicineSymbol} />
+      <CustomTopView
+        title="Manage Receied Items"
+        ImageSource={MedicineSymbol}
+      />
       <ScrollView
         style={styles.container}
         contentContainerStyle={{alignItems: 'center'}}>
@@ -85,4 +88,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ManageMedicine;
+export default ManageReceivedItems;

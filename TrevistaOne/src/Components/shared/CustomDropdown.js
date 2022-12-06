@@ -7,14 +7,14 @@ import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-const title = 'BTCH-TV1234  :';
+const title = 'BTCH-TV1234';
 const name = 'Paracetemol';
 const specs = 'specs';
 const category = '01';
 const supplier = 'S-1';
 const measurements = '100mg';
-const price = '15';
-const qty = '100';
+const price = 15;
+const qty = 100;
 const expiryDate = '03/04/2022';
 const createdBy = 'Vishnu Reddy';
 
@@ -60,9 +60,16 @@ const CustomDropdown = () => {
               Price: <Text style={styles.ValueStyles}>INR {price}</Text>
             </Text>
           </View>
-          <View style={styles.dropdownInsideViewStyles}>
+          <View
+            style={[
+              styles.dropdownInsideViewStyles,
+              {flexDirection: 'row', justifyContent: 'space-between'},
+            ]}>
             <Text style={styles.SubHeadingTextStyles}>
               Qty: <Text style={styles.ValueStyles}>{qty}</Text>
+            </Text>
+            <Text style={styles.SubHeadingTextStyles}>
+              Amount: <Text style={styles.ValueStyles}>{price * qty}</Text>
             </Text>
           </View>
           <View style={styles.dropdownInsideViewStyles}>
