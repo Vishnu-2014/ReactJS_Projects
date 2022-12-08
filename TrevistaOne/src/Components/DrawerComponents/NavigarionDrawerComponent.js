@@ -15,15 +15,29 @@ import ReturningInformation from './Return/ReturningInformation';
 import AddStock from './Stocks/AddStock';
 import ManageStock from './Stocks/ManageStock';
 import AddRequest from './Request/AddRequest';
+import {logoColor} from '../../themes/colors';
 
 import {NavHeaderTitle} from '../shared/NavHeaderTitle';
+import {CustomNavigationDrawer} from './CustomNavigationDrawer';
 
 import Profile from '../../images/Profile.png';
 const Drawer = createDrawerNavigator();
 
 const NavigationDrawerComponent = () => {
   return (
-    <Drawer.Navigator initialRouteName="AdminDashboard">
+    <Drawer.Navigator
+      initialRouteName="AdminDashboard"
+      drawerContent={props => <CustomNavigationDrawer {...props} />}
+      screenOptions={{
+        drawerActiveBackgroundColor: logoColor,
+        drawerActiveTintColor: '#fff',
+        drawerInactiveTintColor: '#333',
+        drawerLabelStyle: {
+          marginLeft: 25,
+          fontFamily: 'Roboto-Medium',
+          fontSize: 15,
+        },
+      }}>
       <Drawer.Screen
         name="AdminDashboard"
         component={AdminDashboard}
@@ -60,20 +74,23 @@ const NavigationDrawerComponent = () => {
         }}
       />
       {/* Medicine drawer start */}
-      <Drawer.Screen
-        name="Add Medicine"
-        component={AddMedicine}
-        options={{
-          headerTitle: () => <NavHeaderTitle icon={Profile} />,
-        }}
-      />
-      <Drawer.Screen
-        name="Manage Medicine"
-        component={ManageMedicine}
-        options={{
-          headerTitle: () => <NavHeaderTitle icon={Profile} />,
-        }}
-      />
+      <Drawer.Group screenOptions={{headerStyle: {backgroundColor: logoColor}}}>
+        <Drawer.Screen
+          name="Add Medicine"
+          component={AddMedicine}
+          options={{
+            headerTitle: () => <NavHeaderTitle icon={Profile} />,
+          }}
+        />
+        <Drawer.Screen
+          name="Manage Medicine"
+          component={ManageMedicine}
+          options={{
+            headerTitle: () => <NavHeaderTitle icon={Profile} />,
+          }}
+        />
+      </Drawer.Group>
+
       {/* Medicine drawer end */}
 
       {/* Receiving Drawer Start's */}
